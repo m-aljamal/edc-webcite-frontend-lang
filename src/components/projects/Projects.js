@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import Title_no_back from "../shared/Title_no_back"
+import Title from "../shared/Title"
 
 const Projects = () => {
   const { projects } = useStaticQuery(graphql`
@@ -30,7 +30,7 @@ const Projects = () => {
 
   return (
     <ProjectsStyle>
-      <Title_no_back title="مشاريعنا" width="110px" />
+      <Title title="مشاريعنا" width="110px" />
       <div className="container">
         {projects.nodes.map((pro, i) => (
           <Row index={i}>

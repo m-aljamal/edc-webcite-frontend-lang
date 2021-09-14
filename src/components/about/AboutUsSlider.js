@@ -37,6 +37,7 @@ export default function AboutUsSlider({ slides, lang }) {
           <ImageSlider
             width="100%"
             arrowWidth="20px"
+            noArrow
             options={{
               autoplay: true,
               autoplaySpeed: 5000,

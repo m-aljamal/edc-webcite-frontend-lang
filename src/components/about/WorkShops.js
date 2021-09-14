@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Title_no_back from "../shared/Title_no_back"
+import Title from "../shared/Title"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 const WorkShops = () => {
@@ -34,7 +34,7 @@ const WorkShops = () => {
   const { title, body } = words["ar"]
   return (
     <Wraper>
-      <Title_no_back title={title} width="320px" workShops />
+      <Title title={title}/>
       <div className="container">
         <p className="body">{body}</p>
         <div className="imagesContainer">

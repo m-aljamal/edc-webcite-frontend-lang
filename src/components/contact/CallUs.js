@@ -3,8 +3,8 @@ import styled from "styled-components"
 import phoneIcon from "../../assist/icons/contact/phone.svg"
 import emailIcon from "../../assist/icons/contact/email.svg"
 import sociallIcon from "../../assist/icons/contact/social.svg"
-import Title_no_back from "../shared/Title_no_back"
 import Title from "../shared/Title"
+
 const CallUs = () => {
   return (
     <Wraper>
@@ -84,7 +84,7 @@ const Card = ({
 
       {type === "phone" ? (
         <>
-          <Title_no_back title={title} width="65px" />
+          <Title title={title} width="65px" />
           <a href="tel:00905315074547" rel="noreferrer">
             {content1}
           </a>
@@ -94,14 +94,14 @@ const Card = ({
         </>
       ) : type === "email" ? (
         <>
-          <Title_no_back title={title} width="135px" />
+          <Title title={title} width="135px" />
           <a href="mailto:info@edcommission.com" rel="noreferrer">
             {content1}
           </a>
         </>
       ) : (
         <>
-          <Title_no_back title={title} width="120px" />
+          <Title title={title} width="120px" />
           <a
             href="https://www.facebook.com/edcmission"
             target="_blank"

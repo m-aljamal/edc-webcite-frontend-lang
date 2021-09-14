@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Event from "../events/Event"
-import Title_no_back from "../shared/Title_no_back"
+import Title from "../shared/Title"
 
 const EventsList = ({ lang }) => {
   const { events } = useStaticQuery(graphql`
@@ -40,7 +40,7 @@ const EventsList = ({ lang }) => {
 
   return (
     <div className="container md-font" style={{ marginTop: "50px" }}>
-      <Title_no_back
+      <Title
         title={lang === "ar" ? `آخر الفعاليات` : "Latest events"}
       />
       <div className="grid grid-cols-3 gap-8 mt-8">
