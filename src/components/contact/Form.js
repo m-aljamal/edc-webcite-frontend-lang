@@ -1,82 +1,63 @@
 import React from "react"
 import styled from "styled-components"
-const Form = ({ text, buttonText, lang }) => {
+const style =
+  "border-2 rounded-md border-gray-300 focus:outline-none focus:ring w-full my-3 p-4"
+const Form = ({ lang }) => {
   const words = {
     ar: {
       emailText: "الإيميل",
       name: "الاسم",
       phone: "الهاتف",
+      buttonText: "أرسل",
+      text: "نص الرسالة",
     },
     en: {
       emailText: "Email",
       name: "Name",
       phone: "Phone",
-    },
-    tr: {
-      emailText: "email",
-      name: "isim",
-      phone: "Telefon",
+      buttonText: "Send",
+      text: "Message",
     },
   }
-  const { emailText, name, phone } = words[lang]
+  const { emailText, name, phone, text, buttonText } = words[lang]
+
   return (
-    <Wraper>
-      <form
-        action="https://formspree.io/f/xleobegb"
-        method="POST"
-        className={` ${lang !== "ar" && "langFormStyle"}  `}
-      >
-        <div className="inputsContainer">
-          <div>
-            <input type="email" name="email" placeholder={emailText} />
-          </div>
-          <div>
-            <input type="text" neme="name" placeholder={name} />
-          </div>
-          <div>
-            <input type="text" name="phoneNumber" placeholder={phone} />
-          </div>
+    <form
+      action="https://formspree.io/f/xleobegb"
+      method="POST"
+      className="container mt-8"
+    >
+      <div className="grid grid-cols-3 gap-5">
+        <div>
+          <Input type="email" name="email" placeholder={emailText} />
         </div>
         <div>
-          <textarea placeholder={text} name="messageBody" />
+          <Input type="text" name="name" placeholder={name} />
         </div>
-        <div className="button">
-          <button>{buttonText}</button>
+        <div>
+          <Input type="text" name="phoneNumber" placeholder={phone} />
         </div>
-      </form>
-    </Wraper>
+      </div>
+      <div>
+        <textarea placeholder={text} name="messageBody" className={style} />
+      </div>
+      <div className="button">
+        <button className="border bg-mainblue text-white px-4 py-2 rounded-md">
+          {buttonText}
+        </button>
+      </div>
+    </form>
   )
 }
 
+const Input = ({ type, name, placeholder }) => {
+  return (
+    <input
+      type={type}
+      name={name}
+      placeholder={placeholder}
+      className={style}
+    />
+  )
+}
 export default Form
-const Wraper = styled.section`
-  text-align: center;
-  input,
-  textarea {
-    border-radius: 10px;
-    margin-top: 20px;
-  }
-  textarea {
-    height: 160px;
-  }
-  input,
-  textarea,
-  button {
-    width: 90%;
-    background-color: #e9eeed;
-    font-family: "Cairo", sans-serif;
-    border: 0;
-    font-size: 1.5rem;
-    padding: 15px 30px;
-
-    &:focus {
-      outline: none !important;
-      box-shadow: 0 0 10px var(--darkGray);
-    }
-  }
-  button {
-    color: white;
-    background: var(--blue);
-    padding: 10px 15px;
-  }
-`

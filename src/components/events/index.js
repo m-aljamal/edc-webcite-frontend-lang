@@ -1,9 +1,8 @@
 import React from "react"
-import HeroBackground from "../shared/HeroBackground"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
 import EventsList from "./EventsList"
-const Events = () => {
+import HeroContent from "../shared/HeroContent"
+const Events = ({ lang }) => {
   const { hero } = useStaticQuery(graphql`
     {
       hero: sanityOtherHeroImgs(title: { eq: "about" }) {
@@ -19,49 +18,29 @@ const Events = () => {
   `)
   const words = {
     ar: {
-      heroTitle1: "الفعاليّات والأنشطة",
+      heroTitle: "الفعاليّات والأنشطة",
 
       heroBody: `
       تلعب الفعاليّات والأنشطة دوراً بارزاً في بناء شخصيّة الطالب من خلال تنمية قدراته ومواهبه وتعديل سلوكه واحتياجاته النفسيّة.
           `,
     },
+    en: {
+      heroTitle: `Events and Activities`,
+      heroBody: `Events and activities play a prominent role in building student's personality by developing his abilities and talents, modifying his behavior and psychological needs.`,
+    },
   }
-  const { heroTitle1, heroBody } = words["ar"]
+  const { heroTitle, heroBody } = words[lang]
   return (
-    <EventsStyle>
-      <HeroBackground image={hero.image.asset.fluid}>
-        <div className="container">
-          <div className="heroTextHolder">
-            <h3>{heroTitle1}</h3>
-            <p>{heroBody}</p>
-          </div>
-        </div>
-      </HeroBackground>
-      <EventsList />
-    </EventsStyle>
+    <>
+      <HeroContent
+        fluid={hero.image.asset.fluid}
+        heroTitle={heroTitle}
+        heroBody={heroBody}
+        lang={lang}
+      />
+      <EventsList lang={lang} />
+    </>
   )
 }
 
 export default Events
-const EventsStyle = styled.div`
-  .heroTextHolder {
-    padding: 143px 0px;
-    width: 400px;
-    margin-left: auto;
-
-    h3 {
-      color: var(--darkGray);
-      font-size: 3.5rem;
-    }
-    p {
-      color: white;
-      font-size: 2rem;
-      text-align: justify;
-    }
-  }
-  @media (max-width: 750px) {
-    .heroTextHolder {
-      display: none;
-    }
-  }
-`

@@ -1,11 +1,12 @@
 import React from "react"
+import ProjectsPage from "../components/projects"
 import Layout from "../components/shared/Layout"
-// import ProjectsIndex from '../components/projects'
+import SEO from "../components/shared/seo"
 const ProjectEnglish = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      {/* <ProjectsIndex lang="en" /> */}
-      
+      <SEO title="Projects" lang="en" />
+      <ProjectsPage lang="en" />
     </Layout>
   )
 }

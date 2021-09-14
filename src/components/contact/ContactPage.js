@@ -1,12 +1,11 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import HeroBackground from "../shared/HeroBackground"
-import styled from "styled-components"
 import CallUs from "./CallUs"
 import LeaveMessage from "./LeaveMessage"
 import Location from "./Loaction"
 import Donate from "../donate/IndexPage"
-const ContactPage = () => {
+import HeroContent from "../shared/HeroContent"
+const ContactPage = ({ lang }) => {
   const { img } = useStaticQuery(graphql`
     {
       img: sanityOtherHeroImgs(title: { eq: "contact" }) {
@@ -24,60 +23,34 @@ const ContactPage = () => {
 
   const words = {
     ar: {
-      heroTitle1: "يسرّ هيئة",
-      heroTitle2: "تطوير التعليم",
+      heroTitle: "يسرّ هيئة تطوير التعليم",
       heroBody: `
       الإجابة على استفساراتكم والاستماع
       لآرائكم والرد على تعليقاتكم. 
           `,
     },
+    en: {
+      heroTitle: "Education Development Commission is pleased",
+      heroBody: `
+      to answer your inquiries, listen to your opinions and respond to your comments.
+      `,
+    },
   }
-  const { heroTitle1, heroTitle2, heroBody } = words["ar"]
+  const { heroTitle, heroBody } = words[lang]
   return (
-    <Wraper>
-      <HeroBackground image={img.image.asset.fluid}>
-        <div className="container">
-          <div className="heroTextHolder">
-            <h3>
-              {heroTitle1} {heroTitle2}
-            </h3>
-            <p>{heroBody}</p>
-          </div>
-        </div>
-      </HeroBackground>
-      <CallUs />
-      <LeaveMessage />
-      <Location />
+    <>
+      <HeroContent
+        fluid={img.image.asset.fluid}
+        heroTitle={heroTitle}
+        heroBody={heroBody}
+        lang={lang}
+      />
+      <CallUs lang={lang} />
+      <LeaveMessage lang={lang} />
+      <Location lang={lang} />
       <Donate />
-    </Wraper>
+    </>
   )
 }
 
 export default ContactPage
-
-const Wraper = styled.div`
-  .heroTextHolder {
-    padding: 143px 0px;
-    width: 350px;
-    margin-left: auto;
-
-    h3 {
-      color: var(--darkGray);
-      font-size: 3.5rem;
-    }
-    p {
-      color: white;
-      font-size: 2rem;
-    }
-  }
-  @media (max-width: 400px) {
-    .heroTextHolder {
-      display: none;
-    }
-  }
-  @media (max-width: 750px) {
-    .heroTextHolder {
-      display: none;
-    }
-  }
-`

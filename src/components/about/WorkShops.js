@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Title from "../shared/Title"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-const WorkShops = () => {
+const WorkShops = ({ lang }) => {
   const { images } = useStaticQuery(graphql`
     {
       images: allSanityWorkShops {
@@ -30,52 +30,30 @@ const WorkShops = () => {
 لدفع تلك العمليّة إلى الأمام.  
             `,
     },
+    en: {
+      title: `Conferences and Workshops:`,
+      body: `Education Development Commission holds annual conferences to discuss the implications of the educational process and the best ways to advance this process.`,
+    },
   }
-  const { title, body } = words["ar"]
+  const { title, body } = words[lang]
   return (
-    <Wraper>
-      <Title title={title}/>
-      <div className="container">
-        <p className="body">{body}</p>
-        <div className="imagesContainer">
+    <div className="container">
+      <Title title={title} />
+      <div className="mt-8">
+        <p className="text-xl text-gray-800">{body}</p>
+        <div className="grid grid-cols-4 gap-5 my-8">
           {images.nodes.map((image, i) => (
-            <Img fluid={image.image.asset.fluid} alt="img1" key={i} />
+            <Img
+              fluid={image.image.asset.fluid}
+              alt="img1"
+              key={i}
+              className="rounded-md"
+            />
           ))}
         </div>
       </div>
-    </Wraper>
+    </div>
   )
 }
 
 export default WorkShops
-
-const Wraper = styled.section`
-  padding: 30px 0 0 0;
-  .body {
-    padding-top: 20px;
-    text-align: center;
-    font-size: 2rem;
-    color: var(--darkGray);
-  }
-  .imagesContainer {
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 50px;
-  }
-  @media (max-width: 800px) {
-    .imagesContainer {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  @media (max-width: 450px) {
-    .imagesContainer {
-      grid-template-columns: repeat(1, 1fr);
-    }
-  }
-  @media (max-width: 600px) {
-    .body {
-      font-size: 1.6rem;
-    }
-  }
-`
