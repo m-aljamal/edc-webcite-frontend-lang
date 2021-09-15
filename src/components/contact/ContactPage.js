@@ -48,7 +48,7 @@ const ContactPage = ({ lang }) => {
       <CallUs lang={lang} />
       <LeaveMessage lang={lang} />
       <Location lang={lang} />
-      <Donate />
+      <Donate lang={lang} />
     </>
   )
 }

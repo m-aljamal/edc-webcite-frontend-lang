@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useState, useEffect } from "react"
 import Title from "../shared/Title"
 import eurIcon from "../../assist/icons/donate/eurIcon.svg"
 import usdIcon from "../../assist/icons/donate/usdIcon.svg"
 import tlIcon from "../../assist/icons/donate/tlIcon.svg"
 import { useStaticQuery, graphql } from "gatsby"
 import Background from "../shared/Background"
-const IndexPage = () => {
+import Share from "../shared/Share"
+const IndexPage = ({ lang }) => {
   const { img } = useStaticQuery(graphql`
     {
       img: sanityOtherHeroImgs(title: { eq: "bankBackground" }) {
@@ -22,133 +22,181 @@ const IndexPage = () => {
     }
   `)
 
+  const text = {
+    ar: {
+      title: `كونوا معهم وساهموا في تعليمهم وبناء مستقبلهم`,
+      header: "حساب البنك:",
+    },
+    en: {
+      title: `
+    Be with them and contribute to their education and building their future.
+    `,
+
+      header: "Bank accounts:",
+    },
+  }
+  const banckInfo = [
+    {
+      title: "Bank Address:",
+      info: "İslambey, Cumhuriyet Cd. No:170, 79001 Merkez/Kilis- Turkey",
+    },
+    { title: "Name of account:", info: "EĞİTİM GELİŞTİRME DERNEĞİ" },
+    {
+      title: "Organization Address:",
+      info: `TURKEY - KILIS - OYLUM MAHALLESI GAZIANTEP YOLU (SÖĞÜTLÜDERE
+      CIVARI) KÜME EVLERI HAYAT VILLARI NO: 5V`,
+    },
+    { title: "zip code:", info: `79000` },
+    { title: "Swift code:", info: `TCZBTR2AXXX` },
+  ]
+
+  const numbers = [
+    {
+      number: "77591825-5001",
+      iban: "TR84 0001 0000 4377 5918 2550 01",
+      img: tlIcon,
+    },
+    {
+      number: "77591825-5002",
+      iban: "TR57 0001 0000 4377 5918 2550 02",
+      img: usdIcon,
+    },
+    {
+      number: "77591825-5003",
+      iban: "TR30 0001 0000 4377 5918 2550 03",
+      img: eurIcon,
+    },
+  ]
+
+  const shareBanckInfo = `
+ Bank Address:
+İslambey, Cumhuriyet Cd. No:170, 79001 Merkez/Kilis- Turkey
+
+Name of account:
+EĞİTİM GELİŞTİRME DERNEĞİ
+
+Organization Address:
+TURKEY - KILIS - OYLUM MAHALLESI GAZIANTEP YOLU (SÖĞÜTLÜDERE CIVARI) KÜME EVLERI HAYAT VILLARI NO: 5V
+
+zip code:
+79000
+
+Swift code:
+TCZBTR2AXXX
+
+Turkish lira currency:
+
+Account number:77591825-5001
+IBAN:TR84 0001 0000 4377 5918 2550 01
+
+Dollar currency:
+
+Account number:77591825-5002
+IBAN:TR57 0001 0000 4377 5918 2550 02
+
+Euro currency :
+
+Account number:77591825-5003
+IBAN:TR30 0001 0000 4377 5918 2550 03
+
+ `
+  const { title, header } = text[lang]
   return (
     <>
-      <Title text="حساب البنك" />
-      <DonateStyle>
-        <div className="backgroundImage">
+      <Title title={header} />
+      <div className="mt-12 font-bold">
+        <div className=" relative">
           <Background image={img.image.asset.fluid}>
-            <h2 className="text container">
-              كونوا معهم وساهموا في تعليمهم وبناء مستقبلهم
-            </h2>
+            <div className=" bg-gray-500 opacity-40 absolute top-0 bottom-0 right-0 left-0"></div>
+            <div className="flex items-center justify-center">
+              <h2 className="py-60 z-20 text-white text-3xl font-bold ">
+                {title}
+              </h2>
+            </div>
           </Background>
         </div>
 
-        <div className="container  ">
-          <h3>
-            Bank Address:
-            <span>
-              İslambey, Cumhuriyet Cd. No:170, 79001 Merkez/Kilis- Turkey
-            </span>
-          </h3>
-          <h3>
-            Name of account:
-            <span>EĞİTİM GELİŞTİRME DERNEĞİ</span>
-          </h3>
-          <h3>
-            Organization Address:
-            <span>
-              TURKEY - KILIS - OYLUM MAHALLESI GAZIANTEP YOLU (SÖĞÜTLÜDERE
-              CIVARI) KÜME EVLERI HAYAT VILLARI NO: 5V
-            </span>
-          </h3>
-          <h3>
-            zip code:
-            <span>79000</span>
-          </h3>
-          <h3>
-            Swift code:
-            <span>TCZBTR2AXXX</span>
-          </h3>
-          <div className="accountIban">
-            <img src={eurIcon} alt="EUR" />
-            <div>
-              <h3>
-                Account number: <span>77591825-5003</span>
-              </h3>
-              <h3>
-                IBAN: <span>TR30 0001 0000 4377 5918 2550 03</span>
-              </h3>
-            </div>
-          </div>
-          <div className="accountIban">
-            <img src={usdIcon} alt="USD" />
-            <div>
-              <h3>
-                Account number: <span>77591825-5002</span>
-              </h3>
-              <h3>
-                IBAN: <span>TR57 0001 0000 4377 5918 2550 02</span>
-              </h3>
-            </div>
-          </div>
-          <div className="accountIban">
-            <img src={tlIcon} alt="TL" />
-            <div>
-              <h3>
-                Account number: <span>77591825-5001</span>
-              </h3>
-              <h3>
-                IBAN: <span>TR84 0001 0000 4377 5918 2550 01</span>
-              </h3>
-            </div>
-          </div>
+        <div className="container my-8" style={{ direction: "ltr" }}>
+          <Share info={shareBanckInfo} />
+          {banckInfo.map(b => (
+            <Info title={b.title} pargraph={b.info} lang={lang} />
+          ))}
+          {numbers.map(n => (
+            <BankInfo img={n.img} number={n.number} iban={n.iban} lang={lang} />
+          ))}
         </div>
-      </DonateStyle>
+      </div>
     </>
   )
 }
 
 export default IndexPage
 
-const DonateStyle = styled.section`
-  margin-top: 30px;
-  direction: ltr;
-  .backgroundImage {
-    background-color: rgba(71 108 134, 0.6);
-    background-image: linear-gradient(rgba(0, 0, 2, 0.3), rgba(0, 0, 50, 0.5));
-  }
-  .text {
-    padding: 20% 0;
-    text-align: center;
-    color: white;
-  }
-  h3 {
-    margin-top: 10px;
-    color: var(--blue);
-    font-weight: bold;
-    font-size: 2rem;
-    span {
-      color: black;
-      margin-left: 10px;
-      font-weight: normal;
-    }
-  }
-  .accountIban {
-    margin: 25px 0;
-    display: flex;
-    align-items: center;
-    h3 {
-      margin: 0;
-    }
-    img {
-      width: 75px;
-      margin-right: 15px;
-    }
-  }
-  @media (max-width: 600px) {
-    h3 {
-      font-size: 1.4rem;
-    }
-  }
-  @media (max-width: 400px) {
-    .accountIban {
-      flex-direction: column;
-    }
-  }
-  @media (max-width: 750px) {
-    .container {
-      max-width: 90%;
-    }
-  }
-`
+const Info = ({ title, pargraph, lang }) => {
+  return (
+    <div className="py-2 flex gap-6 items-center justify-between shadow-lg p-3 border-2 my-4 rounded-md">
+      <div>
+        <h2 className="text-mainblue  text-2xl">{title}</h2>
+        <div className="flex gap-10 ">
+          <p className="text-xl text-gray-800"> {pargraph}</p>
+          {/* <CopyButton lang={lang} copyText={pargraph} /> */}
+        </div>
+      </div>
+    </div>
+  )
+}
+// const CopyButton = ({ copyText, lang }) => {
+//   const text = {
+//     ar: {
+//       copy: "نسخ",
+//       confirm: "تم النسخ",
+//     },
+//     en: {
+//       copy: "copy",
+//       confirm: "copied",
+//     },
+//   }
+//   const { copy, confirm } = text[lang]
+//   const [isCopy, setIsCopy] = useState(copy)
+//   useEffect(() => {
+//     const time = setTimeout(() => setIsCopy(copy), 1000)
+//     return () => clearTimeout(time)
+//   }, [isCopy, setIsCopy])
+//   return (
+//     <button
+//       onClick={() => {
+//         navigator.clipboard.writeText(copyText)
+//         setIsCopy(confirm)
+//       }}
+//       className="focus:outline-none text-gray-500 text-base"
+//     >
+//       {isCopy}
+//     </button>
+//   )
+// }
+const BankInfo = ({ img, number, iban, lang }) => {
+  return (
+    <div className="flex gap-6 py-4 items-center justify-between shadow-lg  border my-4 p-3 rounded-md">
+      <div className="flex gap-6 items-center mt-5">
+        <img src={img} alt="currency" className="w-20" />
+        <div className="text-xl">
+          <h3 className="text-mainblue  ">
+            Account number:
+            <span>
+              <span className="text-gray-800 mr-10">{number}</span>
+              {/* <CopyButton copyText={number} lang={lang} /> */}
+            </span>
+          </h3>
+          <h3 className="text-mainblue mt-2">
+            IBAN:
+            <span>
+              <span className="text-gray-800 mr-10">{iban}</span>
+              {/* <CopyButton copyText={iban} lang={lang} /> */}
+            </span>
+          </h3>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  )
+}

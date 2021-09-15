@@ -6,6 +6,7 @@ const PortableText = ({ blocks }) => (
     blocks={blocks}
     projectId={process.env.GATSBY_SANITY_PROJECT_ID}
     dataset={process.env.GATSBY_SANITY_DATASET}
+    className="text-gray-800"
   />
 )
 
