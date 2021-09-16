@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Background = ({ children, image, className }) => {
   return (
-    <Wraper>
+    <>
       <BackgroundImage
         Tag="div"
         fluid={image}
@@ -13,7 +13,7 @@ const Background = ({ children, image, className }) => {
       >
         {children}
       </BackgroundImage>
-    </Wraper>
+    </>
   )
 }
 

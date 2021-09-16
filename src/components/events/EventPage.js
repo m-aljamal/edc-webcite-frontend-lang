@@ -26,11 +26,10 @@ const SingleEvent = ({ data, lang }) => {
           {data.title[lang]}
         </h2>
 
-        <div className="mt-8 text-xl leading-8">
-          {data._rawParagraph1 && (
-            <PortableText blocks={data._rawParagraph1[lang]} />
-          )}
-        </div>
+        {data._rawParagraph1 && (
+          <PortableText blocks={data._rawParagraph1[lang]} />
+        )}
+
         <div className="grid grid-cols-3 gap-5 my-8">
           {data.imageOfText?.map(img => (
             <Img
@@ -48,11 +47,11 @@ const SingleEvent = ({ data, lang }) => {
             />
           )}
         </div>
-        <div className="mt-8 text-xl leading-8">
+       
           {data._rawParagraph2 && (
             <PortableText blocks={data._rawParagraph2[lang]} />
           )}
-        </div>
+       
       </div>
     </div>
   )

@@ -9,7 +9,7 @@ const Project = ({ location, data: { project }, pageContext }) => {
   return (
     <Layout location={location} lang={lang}>
       <SEO title={project.title} lang={lang} />
-      {/* <ProjectPage data={project} /> */}
+      <ProjectPage data={project} lang={lang} />
     </Layout>
   )
 }
@@ -26,6 +26,7 @@ export const query = graphql`
       _rawProjectDescription1
       _rawProjectDescription2
       _rawProjectIntro
+      _rawProjectGoals
       title {
         ar
         en

@@ -10,12 +10,15 @@ function SEO({ lang, meta, title }) {
         site {
           siteMetadata {
             author
-            arDescription
-            enDescription
-            trDescription
             siteUrl
-            title
-            arabicTitle
+            orgTitle {
+              ar
+              en
+            }
+            description {
+              ar
+              en
+            }
             image
             twitterUserName
           }
@@ -23,13 +26,9 @@ function SEO({ lang, meta, title }) {
       }
     `
   )
-
-  const metaDescription =
-    lang === "ar"
-      ? site.siteMetadata.arDescription
-      : lang === "en"
-      ? site.siteMetadata.enDescription
-      : site.siteMetadata.trDescription
+  console.clear()
+  const metaDescription = site.siteMetadata.description[lang]
+  const outTitle = site.siteMetadata.orgTitle[lang]
   return (
     <Helmet
       htmlAttributes={{
@@ -43,7 +42,7 @@ function SEO({ lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: outTitle,
         },
         {
           property: `og:description`,
@@ -63,7 +62,7 @@ function SEO({ lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: outTitle,
         },
         {
           name: `twitter:description`,
