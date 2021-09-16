@@ -9,15 +9,15 @@ const Index = ({ data, lang }) => {
   return (
     <div className="container my-10">
       <Img
-        fluid={data.image[0].asset.fluid}
+        fluid={data?.image[0].asset.fluid}
         className="rounded-md"
-        alt={data.title}
+        alt="proImage"
         objectFit="cover"
       />
       <div className="flex my-8 ">
         <Share info="https://edcommission.com/projects/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%B9%D9%82%D9%84" />
         <h2 className=" flex-grow text-center font-semibold text-3xl text-mainblue">
-          {data.projectName[lang]}
+          {data?.projectName[lang]}
         </h2>
       </div>
 
@@ -43,7 +43,7 @@ const Index = ({ data, lang }) => {
       </div>
 
       <div className="my-10">
-        {data.projectGoals.length > 0 && (
+        {data.projectGoals?.length > 0 && (
           <BackgroundImage
             Tag="div"
             fluid={data?.image[1].asset.fluid}
