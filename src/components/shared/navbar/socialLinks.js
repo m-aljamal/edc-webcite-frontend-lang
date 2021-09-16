@@ -32,7 +32,11 @@ export default () => {
       {socialLinks.map((link, index) => (
         <li key={index}>
           <a href={link.url} target="_blank" rel="noreferrer">
-            <img src={link.icon} alt="social link" className=" w-8" />
+            <img
+              src={link.icon}
+              alt="social link"
+              className=" w-8 rounded-b-md "
+            />
           </a>
         </li>
       ))}

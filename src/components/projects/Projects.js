@@ -29,7 +29,7 @@ const Projects = ({ lang }) => {
 
   return (
     <div className="py-12 container ">
-      <Title title="مشاريعنا" />
+      <Title title={lang === "ar" ? "مشاريعنا" : "Our Projects"} />
       <div className=" mt-8 ">
         {projects.nodes.map((pro, i) => (
           <div className="flex ">

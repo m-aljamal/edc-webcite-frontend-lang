@@ -10,7 +10,7 @@ export default function AboutUsSlider({ slides, lang }) {
     buttons: [
       { value: "aboutUs", ar: "من نحن", en: "About EDC" },
       { value: "ourVision", ar: "رؤيتنا", en: "Our vision" },
-      { value: "ourMessage", ar: "رسالتنا", en: "Oue Message" },
+      { value: "ourMessage", ar: "رسالتنا", en: "Our Message" },
     ],
     activeIndex: 0,
   })

@@ -13,7 +13,7 @@ const Index = ({ lang, location }) => {
       <SuccessStory lang={lang} />
       <HomePageEvents lang={lang} />
       <PartnersSection
-        partnerTitle={lang === "ar" ? "شركاؤنا:" : "Our partners:"}
+        partnerTitle={lang === "ar" ? "شركاؤنا:" : "Our Partners:"}
       />
     </div>
   )

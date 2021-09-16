@@ -40,9 +40,7 @@ const EventsList = ({ lang }) => {
 
   return (
     <div className="container md-font" style={{ marginTop: "50px" }}>
-      <Title
-        title={lang === "ar" ? `آخر الفعاليات` : "Latest events"}
-      />
+      <Title title={lang === "ar" ? `آخر الفعاليات` : "Latest Events"} />
       <div className="grid grid-cols-3 gap-8 mt-8">
         {events.edges.map(
           (e, i) =>
