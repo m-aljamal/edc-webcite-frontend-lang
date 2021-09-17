@@ -23,7 +23,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-advanced-sitemap`,
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-remote-images`,

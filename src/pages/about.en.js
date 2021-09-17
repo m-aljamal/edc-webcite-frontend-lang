@@ -5,7 +5,7 @@ import SEO from "../components/shared/seo"
 const About = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      <SEO title="من نحن" lang="en" />
+      <SEO title="About Us" lang="en" />
       <AboutPage lang="en" />
     </Layout>
   )

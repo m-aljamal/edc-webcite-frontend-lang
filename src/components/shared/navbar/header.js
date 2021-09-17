@@ -43,14 +43,6 @@ const Header = ({ lang, location }) => {
           showSidebar={showSidebar}
         />
       </div>
-      {/* <div className=" lg:flex gap-6">
-        <MainLinks
-          lang={lang}
-          location={location}
-          visible={visible}
-          showSidebar={showSidebar}
-        />
-      </div> */}
 
       <div className=" w-44 pt-2">
         <Link to="/">

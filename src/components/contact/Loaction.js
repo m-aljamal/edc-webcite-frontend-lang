@@ -1,9 +1,8 @@
 import React from "react"
 import Title from "../shared/Title"
-import styled from "styled-components"
 const Loaction = () => {
   return (
-    <LocationStyle>
+    <div className='my-10'>
       <Title text="موقعنا:" />
       <div className="  container ">
         <iframe
@@ -16,14 +15,8 @@ const Loaction = () => {
           aria-hidden="false"
         ></iframe>
       </div>
-    </LocationStyle>
+    </div>
   )
 }
 
 export default Loaction
-
-const LocationStyle = styled.section`
-  .container {
-    margin: 4rem auto;
-  }
-`

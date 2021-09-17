@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Slider from "./Slider"
 import LanguageSelector from "./LanguageSelector"
 export default ({ lang, location, size, visible, showSidebar }) => {
   const mainLinks = [

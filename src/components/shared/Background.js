@@ -1,6 +1,5 @@
 import React from "react"
 import BackgroundImage from "gatsby-background-image"
-import styled from "styled-components"
 
 const Background = ({ children, image, className }) => {
   return (
@@ -18,7 +17,3 @@ const Background = ({ children, image, className }) => {
 }
 
 export default Background
-const Wraper = styled.div`
-  background-position: center;
-  background-size: cover;
-`

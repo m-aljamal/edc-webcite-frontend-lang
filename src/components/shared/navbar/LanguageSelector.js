@@ -1,7 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
 const LanguageSelector = ({ location, lang }) => {
-  console.log({ location, lang });
   const setArabic = () => {
     navigate(location.pathname.replace("/" + lang + "/", "/"))
   }

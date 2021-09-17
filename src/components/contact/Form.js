@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 const style =
   "border-2 rounded-md border-gray-300 focus:outline-none focus:ring w-full my-3 p-4"
 const Form = ({ lang }) => {

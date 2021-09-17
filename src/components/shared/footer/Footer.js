@@ -61,37 +61,43 @@ Via our social media pages
         <div className="text-center">
           <Img fixed={img.edcImg.childImageSharp.fixed} />
         </div>
-        <div className="flex justify-between mt-4">
+        <div className="  grid md:grid-cols-3 grid-cols-1 place-items-center mt-4  gap-10">
           {/* start location */}
           <Content title={welcome}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.761680764482!2d37.17757552470896!3d36.70426434511298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152fd17d4cd6f7b9%3A0x122a856f51adc165!2s79000%20Be%C5%9Fikkaya%2FKilis%20Merkez%2FKilis!5e0!3m2!1sen!2str!4v1598435154903!5m2!1sen!2str"
-              width="200"
-              height="100"
-              frameBorder="0"
-              allowFullScreen=""
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
-          </Content>
-          <Content title={callus}>
-            {/* start address */}
             <div>
-              <p className="">
-                <span>{address}</span>
-                Oylum Mah. Gaziantep yolu <br />
-                Kümeevleri Hayat Vilları NO: 5V
-              </p>
-              <p className="my-4">
-                <span>{phone} </span>
-                <span>47 45 507 531 90+</span>
-              </p>
-              <p>
-                <span>{email}</span>
-                info@edcommission.com
-              </p>
+              <div className="">
+                <p>{address}</p>
+                <p>
+                  Oylum Mah. Gaziantep yolu <br />
+                  Kümeevleri Hayat Vilları NO: 5V
+                </p>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.761680764482!2d37.17757552470896!3d36.70426434511298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152fd17d4cd6f7b9%3A0x122a856f51adc165!2s79000%20Be%C5%9Fikkaya%2FKilis%20Merkez%2FKilis!5e0!3m2!1sen!2str!4v1598435154903!5m2!1sen!2str"
+                width="200"
+                height="100"
+                frameBorder="0"
+                allowFullScreen=""
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
             </div>
           </Content>
+          <div className='hidden md:block'>
+            <Content title={callus}>
+              {/* start address */}
+              <div>
+                <div className="my-4">
+                  <p>{phone} </p>
+                  <p>47 45 507 531 90+</p>
+                </div>
+                <div>
+                  <p>{email}</p>
+                  <p>info@edcommission.com</p>
+                </div>
+              </div>
+            </Content>
+          </div>
           {/* start social */}
           <Content title={contact}>
             <div>

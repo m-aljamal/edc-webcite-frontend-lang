@@ -17,8 +17,8 @@ export default function AboutUsSlider({ slides, lang }) {
 
   return (
     <div className="mt-12">
-      <div className="flex items-center">
-        <div className="w-1/4 container  ">
+      <div className="flex flex-col-reverse md:flex-row  items-center">
+        <div className="md:w-1/4 w-full container  ">
           {buttonClick.buttons.map((b, i) => (
             <button
               className={`${
@@ -33,10 +33,9 @@ export default function AboutUsSlider({ slides, lang }) {
             </button>
           ))}
         </div>
-        <div className="w-3/4">
+        <div className="md:w-3/4  w-full ">
           <ImageSlider
             width="100%"
-            arrowWidth="20px"
             noArrow
             options={{
               autoplay: true,
@@ -50,7 +49,7 @@ export default function AboutUsSlider({ slides, lang }) {
           </ImageSlider>
         </div>
       </div>
-      <div className={lang === "ar" ? "text-right" : "text-left"}>
+      <div className={` ${lang === "ar" ? "text-right" : "text-left"} container`}>
         {buttonClick.activeIndex === 0 ? (
           <AboutText lang={lang} />
         ) : buttonClick.activeIndex === 1 ? (

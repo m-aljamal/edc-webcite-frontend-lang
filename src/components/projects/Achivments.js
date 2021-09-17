@@ -1,6 +1,5 @@
 import React from "react"
 import Title from "../shared/Title"
-import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ProjectNumber from "./ProjectNumber"
@@ -57,10 +56,10 @@ const Achivments = ({ lang }) => {
   return (
     <div className="py-20 relative">
       <Title title={title} />
-      <div className="flex   mt-8">
-        <div className="w-4/5 grid grid-cols-4 gap-5">
+      <div className="flex  relative  mt-8">
+        <div className="md:w-4/5 w-full  grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
           <div
-            className={`absolute w-1/3 bottom-0 transform ${
+            className={`absolute  w-4/5 md:w-1/3 bottom-0 transform ${
               lang === "en" ? "rotate-180" : ""
             } `}
           >
@@ -70,8 +69,11 @@ const Achivments = ({ lang }) => {
             <ProjectNumber data={ach} key={i} lang={lang} />
           ))}
         </div>
-        <div className="w-1/5">
-          <Img fluid={image.image.asset.fluid} />
+        <div className="w-1/5  hidden sm:flex ">
+          <Img
+            fluid={image.image.asset.fluid}
+            className=" rounded-tr-md rounded-br-md w-full"
+          />
         </div>
       </div>
     </div>

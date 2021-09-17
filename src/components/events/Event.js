@@ -11,7 +11,7 @@ const Event = ({ data, homePage, lang }) => {
     ? `events/${data.node.slug.current}`
     : data.node.slug.current
   return (
-    <div className="border rounded-md shadow-lg">
+    <div className="border rounded-md shadow-lg pb-8">
       <Link to={url}>
         <div className="w-full h-60">
           <Img
@@ -21,8 +21,8 @@ const Event = ({ data, homePage, lang }) => {
           />
         </div>
       </Link>
-      <div className="flex justify-between items-center mt-3 border-b pb-3 p-2">
-        <div className="flex items-center gap-2">
+      <div className="xl:flex  justify-between items-center mt-3 border-b pb-3 p-2">
+        <div className="flex mb-2  items-center gap-2">
           <img src={projectIcon} className=" w-5" alt={title[lang]} />
           <p>{location[lang]}</p>
         </div>

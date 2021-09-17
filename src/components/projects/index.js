@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import HeroBackground from "../shared/HeroBackground"
 import Projects from "./Projects"
 import WorkShops from "../about/WorkShops"
 import HeroContent from "../shared/HeroContent"
