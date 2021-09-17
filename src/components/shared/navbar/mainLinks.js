@@ -42,9 +42,12 @@ export default ({ lang, location, size, visible, showSidebar }) => {
   ]
   return (
     <nav>
-      <ul className="  lg:flex gap-8 pt-8 ">
+      <ul className="  lg:flex gap-8 pt-8  ">
         {mainLinks.map(link => (
-          <li className="text-lg font-medium text-gray-800 hover:bg-gray-200 px-10 py-2" key={link.id}>
+          <li
+            className="text-lg font-medium text-gray-800 hover:bg-gray-200 lg:hover:bg-transparent  px-10 lg:px-0 py-2 lg:py-0"
+            key={link.id}
+          >
             <Link
               activeClassName="text-mainblue"
               to={lang === "ar" ? link.url : "/" + lang + link.url}

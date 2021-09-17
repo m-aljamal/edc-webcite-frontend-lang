@@ -7,7 +7,7 @@ import EventPage from "../components/events/EventPage"
 const Event = ({ location, data: { event }, pageContext }) => {
   const { lang } = pageContext
   return (
-    <Layout location={location[lang]} lang={lang}>
+    <Layout location={location} lang={lang}>
       <SEO title={event.title[lang]} lang={lang} />
       <EventPage data={event} lang={lang} />
     </Layout>

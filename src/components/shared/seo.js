@@ -26,7 +26,7 @@ function SEO({ lang, meta, title }) {
       }
     `
   )
-  console.clear()
+
   const metaDescription = site.siteMetadata.description[lang]
   const outTitle = site.siteMetadata.orgTitle[lang]
   return (

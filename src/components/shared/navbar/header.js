@@ -33,8 +33,8 @@ const Header = ({ lang, location }) => {
       </div>
       <div
         className={` ${
-          !visible && "hidden"
-        } absolute lg:static top-32 z-30  bg-white left-0 right-0 border lg:border-0  shadow-lg lg:shadow-none  lg:flex gap-6 rounded-md`}
+          !visible && "hidden "
+        } absolute lg:static top-32 z-30 mx-8  lg:mx-0 bg-white left-0 right-0 border lg:border-0  shadow-lg lg:shadow-none  lg:flex gap-6 rounded-md`}
       >
         <MainLinks
           lang={lang}

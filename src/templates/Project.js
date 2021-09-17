@@ -7,7 +7,7 @@ const Project = ({ location, data: { project }, pageContext }) => {
   const { lang } = pageContext
 
   return (
-    <Layout location={location[lang]} lang={lang}>
+    <Layout location={location} lang={lang}>
       <SEO title={project.title[lang]} lang={lang} />
       <ProjectPage data={project} lang={lang} />
     </Layout>
