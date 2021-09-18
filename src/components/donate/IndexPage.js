@@ -108,7 +108,7 @@ IBAN:TR30 0001 0000 4377 5918 2550 03
         <div className=" relative">
           <Background image={img.image.asset.fluid}>
             <div className=" bg-gray-500 opacity-40 absolute top-0 bottom-0 right-0 left-0"></div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center container">
               <h2 className="py-60 z-20 text-white text-3xl font-bold ">
                 {title}
               </h2>
@@ -177,8 +177,8 @@ const Info = ({ title, pargraph, lang }) => {
 const BankInfo = ({ img, number, iban, lang }) => {
   return (
     <div className="flex gap-6 py-4 items-center justify-between shadow-lg  border my-4 p-3 rounded-md">
-      <div className="flex gap-6 items-center mt-5">
-        <img src={img} alt="currency" className="w-20" />
+      <div className="md:flex gap-6 items-center mt-5">
+        <img src={img} alt="currency" className="w-20 " />
         <div className="text-xl">
           <h3 className="text-mainblue  ">
             Account number:

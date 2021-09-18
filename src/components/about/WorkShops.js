@@ -39,8 +39,8 @@ const WorkShops = ({ lang }) => {
     <div className="container">
       <Title title={title} />
       <div className="mt-8">
-        <p className="text-xl text-gray-800">{body}</p>
-        <div className="grid grid-cols-4 gap-5 my-8">
+        <p className="md:text-xl text-lg text-gray-800">{body}</p>
+        <div className="grid md:grid-cols-4  gap-5 my-8">
           {images.nodes.map((image, i) => (
             <Img
               fluid={image.image.asset.fluid}

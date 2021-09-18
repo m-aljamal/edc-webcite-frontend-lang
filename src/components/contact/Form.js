@@ -26,7 +26,7 @@ const Form = ({ lang }) => {
       method="POST"
       className="container mt-8"
     >
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid md:grid-cols-3 gap-5">
         <div>
           <Input type="email" name="email" placeholder={emailText} />
         </div>

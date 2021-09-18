@@ -26,9 +26,9 @@ const socialLinks = [
     icon: telgram,
   },
 ]
-export default () => {
+export default props => {
   return (
-    <ul className="flex gap-2 ">
+    <ul className={`flex gap-2  ${props.style}`}>
       {socialLinks.map((link, index) => (
         <li key={index}>
           <a href={link.url} target="_blank" rel="noreferrer">
