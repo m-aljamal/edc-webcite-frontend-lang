@@ -10,9 +10,6 @@ import {
   TelegramIcon,
 } from "react-share"
 export default function Share({ info }) {
-  console.clear()
-  console.log('ffff');
-  console.log(info);
   return (
     <ul className="flex gap-1 justify-end    ">
       <li
@@ -55,11 +52,11 @@ export default function Share({ info }) {
           <TwitterIcon size={30} round />
         </TwitterShareButton>
       </li>
-      <li>
+      {/* <li>
         <TelegramShareButton url={info}>
           <TelegramIcon size={30} round />
         </TelegramShareButton>
-      </li>
+      </li> */}
     </ul>
   )
 }

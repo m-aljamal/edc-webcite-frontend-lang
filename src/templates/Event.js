@@ -27,6 +27,10 @@ export const query = graphql`
         ar
         en
       }
+      shortDescription {
+        ar
+        en
+      }
       panner {
         asset {
           fluid(maxWidth: 1000) {
