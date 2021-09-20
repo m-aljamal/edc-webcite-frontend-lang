@@ -13,9 +13,11 @@ const Index = ({ data, lang }) => {
         <title>{data?.projectName[lang]}</title>
         <meta name="description" content={data.shortDescription[lang]} />
         <meta name="image" content={data?.image[0].asset.fluid.src} />
+        <meta name="keywords" content={`دعم التعليم`} />
+        <meta name="robots" content="index,follow" />
 
         <meta property="og:url" content="https://edcommission.com/" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={data?.projectName[lang]} />
         <meta property="og:description" content={data.shortDescription[lang]} />
         <meta property="og:image" content={data?.image[0].asset.fluid.src} />
