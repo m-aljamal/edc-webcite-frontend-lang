@@ -20,7 +20,10 @@ const Index = ({ data, lang }) => {
         <meta name="keywords" content={`دعم التعليم`} />
         <meta name="robots" content="index,follow" />
 
-        <meta property="og:url" content="https://edcommission.com/" />
+        <meta
+          property="og:url"
+          content={`https://edcommission.com/projects/${data.slug.current}`}
+        />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={data?.projectName[lang]} />
         <meta property="og:description" content={data.shortDescription[lang]} />
