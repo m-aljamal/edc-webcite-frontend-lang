@@ -41,8 +41,8 @@ export default function Share({ info }) {
       <li>
         <WhatsappShareButton
           url={info}
-          title={`مشروع عقل
-                  لمتابعة المزيد`}
+          // title={`مشروع عقل
+          //         لمتابعة المزيد`}
         >
           <WhatsappIcon size={30} round />
         </WhatsappShareButton>

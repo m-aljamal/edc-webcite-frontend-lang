@@ -5,90 +5,114 @@ import BackgroundImage from "gatsby-background-image"
 import PortableText from "../shared/PortableText"
 import VideoContainer from "../shared/VideoContainer"
 import Share from "../shared/Share"
+import { Helmet } from "react-helmet"
 const Index = ({ data, lang }) => {
   return (
-    <div className="container my-10">
-      <Img
-        fluid={data?.image[0].asset.fluid}
-        className="rounded-md"
-        alt="proImage"
-        objectFit="cover"
-      />
-      <div className="flex flex-col md:flex-row items-center  my-8 ">
-        <Share info="https://edcommission.com/projects/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%B9%D9%82%D9%84" />
-        <h2 className=" flex-grow text-center font-semibold text-3xl text-mainblue">
-          {data?.projectName[lang]}
-        </h2>
-      </div>
+    <>
+      <Helmet>
+        <title>{data?.projectName[lang]}</title>
+        <meta name="description" content={data?.image[0].asset.fluid.src} />
+        {/* <meta name="image" content={image} /> */}
 
-      <div>
-        {data._rawProjectIntro && (
-          <PortableText blocks={data._rawProjectIntro[lang]} />
-        )}
-        <div className="flex flex-col-reverse md:flex-row items-center gap-5 mt-8 justify-between  rounded-md">
-          <div className="md:w-1/2   p-3">
-            {data._rawMaingoal && (
-              <PortableText blocks={data._rawMaingoal[lang]} />
-            )}
-          </div>
-          <div className="md:w-1/2 ">
-            {data.video && (
-              <VideoContainer
-                src={data?.video}
-                videoPoster={data?.videoPoster}
-              />
-            )}
+        {/* <meta property="og:url" content={url} />
+        {isBlogPost ? <meta property="og:type" content="article" /> : null}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="fb:app_id" content={seo.social.fbAppID} />
+
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content={seo.social.twitter} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={image} /> */}
+      </Helmet>
+      <div className="container my-10">
+        <Img
+          fluid={data?.image[0].asset.fluid}
+          className="rounded-md"
+          alt="proImage"
+          objectFit="cover"
+        />
+        <div className="flex flex-col md:flex-row items-center  my-8 ">
+          <Share
+            info={`https://edcommission.com/projects/${data.slug.current}`}
+          />
+          <h2 className=" flex-grow text-center font-semibold text-3xl text-mainblue">
+            {data?.projectName[lang]}
+          </h2>
+        </div>
+
+        <div>
+          {data._rawProjectIntro && (
+            <PortableText blocks={data._rawProjectIntro[lang]} />
+          )}
+          <div className="flex flex-col-reverse md:flex-row items-center gap-5 mt-8 justify-between  rounded-md">
+            <div className="md:w-1/2   p-3">
+              {data._rawMaingoal && (
+                <PortableText blocks={data._rawMaingoal[lang]} />
+              )}
+            </div>
+            <div className="md:w-1/2 ">
+              {data.video && (
+                <VideoContainer
+                  src={data?.video}
+                  videoPoster={data?.videoPoster}
+                />
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="my-10">
-        {data.projectGoals?.length > 0 && (
-          <BackgroundImage
-            Tag="div"
-            fluid={data?.image[1].asset.fluid}
-            preserveStackingContext={true}
-          >
-            <ul className="py-12 grid   md:grid-cols-2 grid-cols-1 gap-10 px-4  ">
-              {data.projectGoals.map(p => (
-                <li className="text-xl text-mainblue font-semibold bg-gray-200 bg-opacity-75 rounded-md p-2 ">
-                  {p[lang]}
-                </li>
-              ))}
-            </ul>
-          </BackgroundImage>
-        )}
-      </div>
-      <div className="container">
-        {data._rawProjectDescription1 && (
-          <PortableText blocks={data._rawProjectDescription1[lang]} />
-        )}
-        {data.slug.current === "مشروع-عقل" && <AqilProjectData lang={lang} />}
-        <br />
-        <div className="md:w-3/4 w-full mx-auto ">
-          <ImageSlider
-            options={{
-              autoplay: true,
-              autoplaySpeed: 5000,
-              cssEase: "linear",
-            }}
-          >
-            {data.image.map(
-              (img, i) =>
-                i >= 2 && (
-                  <Img
-                    fluid={img.asset.fluid}
-                    className="w-full h-96 rounded-md"
-                  />
-                )
-            )}
-          </ImageSlider>
+        <div className="my-10">
+          {data.projectGoals?.length > 0 && (
+            <BackgroundImage
+              Tag="div"
+              fluid={data?.image[1].asset.fluid}
+              preserveStackingContext={true}
+            >
+              <ul className="py-12 grid   md:grid-cols-2 grid-cols-1 gap-10 px-4  ">
+                {data.projectGoals.map(p => (
+                  <li className="text-xl text-mainblue font-semibold bg-gray-200 bg-opacity-75 rounded-md p-2 ">
+                    {p[lang]}
+                  </li>
+                ))}
+              </ul>
+            </BackgroundImage>
+          )}
         </div>
-        {data._rawProjectDescription2 && (
-          <PortableText blocks={data._rawProjectDescription2[lang]} />
-        )}
+        <div className="container">
+          {data._rawProjectDescription1 && (
+            <PortableText blocks={data._rawProjectDescription1[lang]} />
+          )}
+          {data.slug.current === "مشروع-عقل" && <AqilProjectData lang={lang} />}
+          <br />
+          <div className="md:w-3/4 w-full mx-auto ">
+            <ImageSlider
+              options={{
+                autoplay: true,
+                autoplaySpeed: 5000,
+                cssEase: "linear",
+              }}
+            >
+              {data.image.map(
+                (img, i) =>
+                  i >= 2 && (
+                    <Img
+                      fluid={img.asset.fluid}
+                      className="w-full h-96 rounded-md"
+                    />
+                  )
+              )}
+            </ImageSlider>
+          </div>
+          {data._rawProjectDescription2 && (
+            <PortableText blocks={data._rawProjectDescription2[lang]} />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 
