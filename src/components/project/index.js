@@ -14,19 +14,21 @@ const Index = ({ data, lang }) => {
         <meta name="description" content={data.shortDescription[lang]} />
         <meta name="image" content={data?.image[0].asset.fluid.src} />
 
-        {/* <meta property="og:url" content={url} />
-        {isBlogPost ? <meta property="og:type" content="article" /> : null}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="fb:app_id" content={seo.social.fbAppID} />
+        <meta property="og:url" content="https://edcommission.com/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={data?.projectName[lang]} />
+        <meta property="og:description" content={data.shortDescription[lang]} />
+        <meta property="og:image" content={data?.image[0].asset.fluid.src} />
+        <meta property="fb:app_id" content="123456" />
 
-        
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={seo.social.twitter} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} /> */}
+        <meta name="twitter:creator" content="@edcmission" />
+        <meta name="twitter:title" content={data?.projectName[lang]} />
+        <meta
+          name="twitter:description"
+          content={data.shortDescription[lang]}
+        />
+        <meta name="twitter:image" content={data?.image[0].asset.fluid.src} />
       </Helmet>
       <div className="container my-10">
         <Img
