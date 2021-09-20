@@ -11,8 +11,8 @@ const Index = ({ data, lang }) => {
     <>
       <Helmet>
         <title>{data?.projectName[lang]}</title>
-        <meta name="description" content={data?.image[0].asset.fluid.src} />
-        {/* <meta name="image" content={image} /> */}
+        <meta name="description" content={data.shortDescription[lang]} />
+        <meta name="image" content={data?.image[0].asset.fluid.src} />
 
         {/* <meta property="og:url" content={url} />
         {isBlogPost ? <meta property="og:type" content="article" /> : null}
