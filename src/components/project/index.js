@@ -14,24 +14,24 @@ const Index = ({ data, lang }) => {
         alt="proImage"
         objectFit="cover"
       />
-      <div className="flex my-8 ">
+      <div className="flex flex-col md:flex-row items-center  my-8 ">
         <Share info="https://edcommission.com/projects/%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%B9%D9%82%D9%84" />
         <h2 className=" flex-grow text-center font-semibold text-3xl text-mainblue">
           {data?.projectName[lang]}
         </h2>
       </div>
 
-      <div className="">
+      <div>
         {data._rawProjectIntro && (
           <PortableText blocks={data._rawProjectIntro[lang]} />
         )}
-        <div className="flex  mt-8 justify-between  rounded-md">
-          <div className="w-1/2 p-3">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-5 mt-8 justify-between  rounded-md">
+          <div className="md:w-1/2   p-3">
             {data._rawMaingoal && (
               <PortableText blocks={data._rawMaingoal[lang]} />
             )}
           </div>
-          <div className="w-1/2 ">
+          <div className="md:w-1/2 ">
             {data.video && (
               <VideoContainer
                 src={data?.video}
@@ -49,7 +49,7 @@ const Index = ({ data, lang }) => {
             fluid={data?.image[1].asset.fluid}
             preserveStackingContext={true}
           >
-            <ul className="py-12 grid   grid-cols-2 gap-10 px-4  ">
+            <ul className="py-12 grid   md:grid-cols-2 grid-cols-1 gap-10 px-4  ">
               {data.projectGoals.map(p => (
                 <li className="text-xl text-mainblue font-semibold bg-gray-200 bg-opacity-75 rounded-md p-2 ">
                   {p[lang]}
@@ -65,7 +65,7 @@ const Index = ({ data, lang }) => {
         )}
         {data.slug.current === "مشروع-عقل" && <AqilProjectData lang={lang} />}
         <br />
-        <div className="w-3/4 mx-auto ">
+        <div className="md:w-3/4 w-full mx-auto ">
           <ImageSlider
             options={{
               autoplay: true,

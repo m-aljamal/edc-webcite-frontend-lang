@@ -10,13 +10,13 @@ const SingleEvent = ({ data, lang }) => {
     <div className="my-10 container">
       <Img
         fluid={data.panner.asset.fluid}
-        className=" rounded-md"
+        className=" rounded-md h-96 md:h-full"
         alt={data.title}
         objectFit="cover"
       />
 
       <div className="">
-        <div className="flex justify-between border-b items-center">
+        <div className="flex flex-col md:flex-row  justify-between border-b items-center">
           <Place url={projectIcon} text={data.location[lang]} />
           <Share info="https://edcommission.com/events/%D9%81%D8%B9%D8%A7%D9%84%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%B5%D9%8A%D9%81%D9%8A-%D9%84%D9%84%D8%B9%D8%A7%D9%85-2021" />
           <Place url={calenderIcon} text={data.date} />
@@ -30,7 +30,7 @@ const SingleEvent = ({ data, lang }) => {
           <PortableText blocks={data._rawParagraph1[lang]} />
         )}
 
-        <div className="grid grid-cols-3 gap-5 my-8">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-5 my-8">
           {data.imageOfText?.map(img => (
             <Img
               fluid={img.asset.fluid}
@@ -39,7 +39,7 @@ const SingleEvent = ({ data, lang }) => {
             />
           ))}
         </div>
-        <div className="w-1/2 mx-auto">
+        <div className="md:w-1/2 mx-auto">
           {data.video && (
             <VideoContainer
               src={data.video}
@@ -47,11 +47,10 @@ const SingleEvent = ({ data, lang }) => {
             />
           )}
         </div>
-       
-          {data._rawParagraph2 && (
-            <PortableText blocks={data._rawParagraph2[lang]} />
-          )}
-       
+
+        {data._rawParagraph2 && (
+          <PortableText blocks={data._rawParagraph2[lang]} />
+        )}
       </div>
     </div>
   )
