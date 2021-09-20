@@ -33,11 +33,11 @@ export default function Share({ info }) {
           />
         </svg>
       </li>
-      {/* <li>
+      <li>
         <FacebookShareButton url={info}>
           <FacebookIcon size={30} round />
         </FacebookShareButton>
-      </li> */}
+      </li>
       <li>
         <WhatsappShareButton
           url={info}
