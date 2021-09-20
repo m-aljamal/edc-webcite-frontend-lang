@@ -9,7 +9,11 @@ import { Helmet } from "react-helmet"
 const Index = ({ data, lang }) => {
   return (
     <>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang,
+        }}
+      >
         <title>{data?.projectName[lang]}</title>
         <meta name="description" content={data.shortDescription[lang]} />
         <meta name="image" content={data?.image[0].asset.fluid.src} />
