@@ -1,5 +1,9 @@
 import React from "react"
-const Hero = () => {
+const Hero = ({ lang }) => {
+  const arabicUrl =
+    "https://res.cloudinary.com/dqoung1wz/video/upload/v1634197023/Video/homeVideo-arabic_rf3087.mp4"
+  const englishUrl =
+    "https://res.cloudinary.com/dqoung1wz/video/upload/v1634197021/Video/homeVideo-english_n3c4vd.mp4"
   return (
     <div className="mt-4">
       <video
@@ -9,7 +13,7 @@ const Hero = () => {
         className="object-contain md:object-fill w-full lg:h-[600px]"
       >
         <source
-          src="https://res.cloudinary.com/dqoung1wz/video/upload/v1629796350/Video/WhatsApp_Video_2021-08-15_at_11.38.32_AM_m8ufpz.mp4"
+          src={lang === "ar" ? arabicUrl : englishUrl}
           type="video/mp4"
         ></source>
       </video>

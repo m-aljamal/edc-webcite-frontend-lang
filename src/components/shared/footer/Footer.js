@@ -83,13 +83,13 @@ Via our social media pages
               ></iframe>
             </div>
           </Content>
-          <div className='hidden md:block'>
+          <div className="hidden md:block">
             <Content title={callus}>
               {/* start address */}
               <div>
                 <div className="my-4">
                   <p>{phone} </p>
-                  <p>47 45 507 531 90+</p>
+                  <p style={{ direction: "ltr" }}>+90 531 507 45 47</p>
                 </div>
                 <div>
                   <p>{email}</p>

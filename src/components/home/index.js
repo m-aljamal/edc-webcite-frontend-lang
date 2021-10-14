@@ -8,7 +8,7 @@ import AboutSection from "./AboutSection"
 const Index = ({ lang, location }) => {
   return (
     <div>
-      <Hero />
+      <Hero lang={lang} />
       <AboutSection lang={lang} />
       <SuccessStory lang={lang} />
       <HomePageEvents lang={lang} />
