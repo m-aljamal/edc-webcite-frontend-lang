@@ -69,7 +69,7 @@ Via our social media pages
                 <p>{address}</p>
                 <p>
                   Oylum Mah. Gaziantep yolu <br />
-                  Kümeevleri Hayat Vilları NO: 5V
+                  Kümeevleri Hayat Vilları NO: 5V KILIS-TURKEY
                 </p>
               </div>
               <iframe
