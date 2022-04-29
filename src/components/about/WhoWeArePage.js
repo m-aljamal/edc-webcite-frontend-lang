@@ -96,7 +96,7 @@ const WhoWeArePage = ({ lang }) => {
         en: `The commission vigorously defends its values of justice, equality, and development, and does not align itself with any political group working in conflict areas.`,
       },
       id: 5,
-      img: slides.nodes[1].aboutPageSlide[4].asset.fluid,
+      img: slides.nodes[1].aboutPageSlide[3].asset.fluid,
     },
   ]
   return (
