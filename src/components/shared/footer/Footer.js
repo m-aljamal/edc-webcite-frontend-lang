@@ -67,9 +67,10 @@ Via our social media pages
             <div>
               <div className="">
                 <p>{address}</p>
-                <p>
-                  Oylum Mah. Gaziantep yolu <br />
-                  Kümeevleri Hayat Vilları NO: 5V KILIS-TURKEY
+                <p style={{ direction: "ltr" }}>
+                  DOĞAN GÜREŞ PAŞA MAH.
+                  <br />
+                  MUSTAFA EREN CAD. 4/34 MERKEZ/KİLİS
                 </p>
               </div>
               <iframe

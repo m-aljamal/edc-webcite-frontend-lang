@@ -52,11 +52,11 @@ const PartnersLogo = () => {
     ],
   }
   return (
-    <div className=" ">
+    <div className="  ">
       <Slider {...settings}>
         {part.nodes[0].logo.map(icon => (
           <div key={icon.asset.id}>
-            <Img fluid={icon.asset.fluid} className=" w-40 mx-auto" />
+            <Img fluid={icon.asset.fluid} className="w-40   mx-auto" />
           </div>
         ))}
       </Slider>
