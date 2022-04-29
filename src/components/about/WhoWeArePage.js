@@ -3,17 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const WhoWeArePage = ({ lang }) => {
-  const { hero, slides } = useStaticQuery(graphql`
+  const { slides } = useStaticQuery(graphql`
     {
-      hero: sanityOtherHeroImgs(title: { eq: "about" }) {
-        image {
-          asset {
-            fluid(maxWidth: 4000) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
       slides: allSanityImagesSlide {
         nodes {
           aboutPageSlide {
