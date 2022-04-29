@@ -34,7 +34,7 @@ const WhoWeArePage = ({ lang }) => {
         `,
       },
 
-      img: slides.nodes[1].aboutPageSlide[0].asset.fluid,
+      img: slides.nodes[0].aboutPageSlide[0].asset.fluid,
       id: 1,
     },
     {
@@ -51,7 +51,7 @@ const WhoWeArePage = ({ lang }) => {
         `,
       },
       id: 2,
-      img: slides.nodes[1].aboutPageSlide[1].asset.fluid,
+      img: slides.nodes[0].aboutPageSlide[1].asset.fluid,
     },
     {
       text: {
@@ -68,7 +68,7 @@ const WhoWeArePage = ({ lang }) => {
       },
 
       id: 3,
-      img: slides.nodes[1].aboutPageSlide[2].asset.fluid,
+      img: slides.nodes[0].aboutPageSlide[2].asset.fluid,
     },
     {
       text: {
@@ -85,7 +85,7 @@ const WhoWeArePage = ({ lang }) => {
         `,
       },
       id: 4,
-      img: slides.nodes[1].aboutPageSlide[3].asset.fluid,
+      img: slides.nodes[0].aboutPageSlide[3].asset.fluid,
     },
     {
       text: {
@@ -96,7 +96,7 @@ const WhoWeArePage = ({ lang }) => {
         en: `The commission vigorously defends its values of justice, equality, and development, and does not align itself with any political group working in conflict areas.`,
       },
       id: 5,
-      img: slides.nodes[1].aboutPageSlide[3].asset.fluid,
+      img: slides.nodes[0].aboutPageSlide[4].asset.fluid,
     },
   ]
   return (
