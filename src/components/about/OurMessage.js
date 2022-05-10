@@ -137,6 +137,7 @@ const OurMessage = ({ lang }) => {
       img: slides.aboutPageSlide[7].asset.fluid,
       id: 8,
     },
+    
   ]
   return (
     <div className="container my-8">
