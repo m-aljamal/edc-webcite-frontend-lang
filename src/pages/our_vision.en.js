@@ -1,9 +1,14 @@
-import React from 'react'
-
-const OurVisionen = () => {
+import React from "react"
+import Layout from "../components/shared/Layout"
+import SEO from "../components/shared/seo"
+import OurVision from "../components/about/OurVision"
+const IndexPage = ({ location }) => {
   return (
-    <div>OurVision.en</div>
+    <Layout location={location} lang="en">
+      <SEO title="رؤيتنا" lang="en" />
+      <OurVision lang="en" />
+    </Layout>
   )
 }
 
-export default OurVisionen
+export default IndexPage

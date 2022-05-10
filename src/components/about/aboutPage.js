@@ -18,13 +18,11 @@ const AboutPage = ({ lang }) => {
           }
         }
       }
-      slides: allSanityImagesSlide {
-        nodes {
-          aboutPageSlide {
-            asset {
-              fluid(maxWidth: 4000) {
-                ...GatsbySanityImageFluid
-              }
+      slides: sanityImagesSlide(title: { eq: "aboutSlides" }) {
+        aboutPageSlide {
+          asset {
+            fluid(maxWidth: 4000) {
+              ...GatsbySanityImageFluid
             }
           }
         }

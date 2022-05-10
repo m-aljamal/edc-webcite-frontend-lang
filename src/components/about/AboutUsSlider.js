@@ -62,8 +62,8 @@ export default function AboutUsSlider({ slides, lang }) {
               cssEase: "linear",
             }}
           >
-            {slides.nodes[1].aboutPageSlide.map(i => (
-              <Img fluid={i.asset.fluid} />
+            {slides.aboutPageSlide.map(i => (
+              <Img fluid={i.asset.fluid} className="rounded-lg" />
             ))}
           </ImageSlider>
         </div>
