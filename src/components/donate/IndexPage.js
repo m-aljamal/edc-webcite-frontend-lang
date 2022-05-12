@@ -37,6 +37,10 @@ const IndexPage = ({ lang }) => {
   }
   const banckInfo = [
     {
+      title: "Bank Name:",
+      info: "Ziraat Bank",
+    },
+    {
       title: "Bank Address:",
       info: "İslambey, Cumhuriyet Cd. No:170, 79001 Merkez/Kilis- Turkey",
     },
@@ -69,6 +73,8 @@ const IndexPage = ({ lang }) => {
   ]
 
   const shareBanckInfo = `
+Bank Name: Ziraat Bankası
+
  Bank Address:
 İslambey, Cumhuriyet Cd. No:170, 79001 Merkez/Kilis- Turkey
 
