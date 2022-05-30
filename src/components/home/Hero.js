@@ -6,17 +6,23 @@ const Hero = ({ lang }) => {
     "https://res.cloudinary.com/dqoung1wz/video/upload/v1634197021/Video/homeVideo-english_n3c4vd.mp4"
   return (
     <div className="mt-4 container">
-      <video
-        loop
-        muted
-        autoPlay
-        className="object-contain md:object-fill w-full lg:h-[600px]"
+      <a
+        href="https://www.youtube.com/watch?v=Y3vcSdsXDEo"
+        target="_blank"
+        rel="noreferrer"
       >
-        <source
-          src={lang === "ar" ? arabicUrl : englishUrl}
-          type="video/mp4"
-        ></source>
-      </video>
+        <video
+          loop
+          muted
+          autoPlay
+          className="object-contain md:object-fill w-full lg:h-[600px]"
+        >
+          <source
+            src={lang === "ar" ? arabicUrl : englishUrl}
+            type="video/mp4"
+          ></source>
+        </video>
+      </a>
     </div>
   )
 }
