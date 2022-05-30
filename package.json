@@ -20,6 +20,7 @@
     "gatsby-plugin-remote-images": "^2.2.0",
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-plugin-twitter": "^4.15.0",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-source-sanity": "^6.0.4",
     "gatsby-transformer-sharp": "^2.5.7",
