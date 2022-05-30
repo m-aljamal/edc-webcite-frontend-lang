@@ -4,6 +4,7 @@ import PartnersSection from "./PartnersSection"
 import SuccessStory from "./SuccessStory"
 import HomePageEvents from "./HomePageEvents"
 import AboutSection from "./AboutSection"
+import Reports from "./Reports"
 
 const Index = ({ lang, location }) => {
   return (
@@ -18,6 +19,7 @@ const Index = ({ lang, location }) => {
       <AboutSection lang={lang} />
       <SuccessStory lang={lang} />
       <HomePageEvents lang={lang} />
+      <Reports lang={lang}/>
       <PartnersSection
         partnerTitle={lang === "ar" ? "شركاؤنا:" : "Our Partners:"}
       />
