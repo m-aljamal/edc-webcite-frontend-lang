@@ -5,7 +5,7 @@ const Hero = ({ lang }) => {
   const englishUrl =
     "https://res.cloudinary.com/dqoung1wz/video/upload/v1634197021/Video/homeVideo-english_n3c4vd.mp4"
   return (
-    <div className="mt-4">
+    <div className="mt-4 container">
       <video
         loop
         muted
