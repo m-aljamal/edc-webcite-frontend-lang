@@ -44,7 +44,7 @@ const Header = ({ lang, location }) => {
         />
       </div>
 
-      <div className=" w-44 pt-2">
+      <div className=" w-44 pt-2  ">
         <Link to="/">
           <img
             src="https://res.cloudinary.com/dqoung1wz/image/upload/v1613318354/websiteImage/edcLogo_vupus2.png"
