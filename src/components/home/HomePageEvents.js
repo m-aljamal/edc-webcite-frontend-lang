@@ -55,7 +55,7 @@ const EventsList = ({ lang }) => {
               )
           )}
         </div>
-        <div className="w-1/4">
+        {/* <div className="w-1/4">
           <a
             class="twitter-timeline"
             data-width="100%"
@@ -69,7 +69,7 @@ const EventsList = ({ lang }) => {
             src="https://platform.twitter.com/widgets.js"
             charset="utf-8"
           ></script>
-        </div>
+        </div> */}
       </div>
     </div>
   )
