@@ -91,6 +91,7 @@ Via our social media pages
                 <div className="my-4">
                   <p>{phone} </p>
                   <p style={{ direction: "ltr" }}>+90 531 507 45 47</p>
+                  <p style={{ direction: "ltr" }}>+90 534 661 12 24</p>
                 </div>
                 <div>
                   <p>{email}</p>
