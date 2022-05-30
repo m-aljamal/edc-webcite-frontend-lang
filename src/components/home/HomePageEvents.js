@@ -55,6 +55,7 @@ const EventsList = ({ lang }) => {
               )
           )}
         </div>
+        
         {/* <div className="w-1/4">
           <a
             class="twitter-timeline"
