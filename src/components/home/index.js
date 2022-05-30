@@ -13,6 +13,7 @@ const Index = ({ lang, location }) => {
         <h2 className="font-bold text-gray-700">هيئة تطوير التعليم</h2>
         <h2 className="text-mainblue font-bold">
           Education Development Commission
+
           
         </h2>
       </div>
