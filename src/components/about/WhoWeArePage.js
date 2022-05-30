@@ -102,7 +102,9 @@ const WhoWeArePage = ({ lang }) => {
     <div className="container my-8">
       <div>
         <h2 className="text-mainblue text-2xl font-semibold text-center">
-          من هيئة تطوير التعليم ؟
+          {lang === "ar"
+            ? "  من هيئة تطوير التعليم ؟"
+            : "What is Education Development Commission ?"}
         </h2>
         <div>
           {data.map(item => (

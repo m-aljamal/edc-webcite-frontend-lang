@@ -33,7 +33,7 @@ const OurVision = ({ lang }) => {
     <div className="container my-8">
       <div>
         <h2 className="text-mainblue text-2xl font-semibold text-center">
-          رؤيتنا
+          {lang === "ar" ? "رؤيتنا" : "Our Vision"}
         </h2>
         <div>
           {data.map(item => (

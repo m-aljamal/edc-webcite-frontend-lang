@@ -137,13 +137,12 @@ const OurMessage = ({ lang }) => {
       img: slides.aboutPageSlide[7].asset.fluid,
       id: 8,
     },
-    
   ]
   return (
     <div className="container my-8">
       <div>
         <h2 className="text-mainblue text-2xl font-semibold text-center">
-          رسالتنا
+          {lang === "ar" ? "رسالتنا" : "Our Message"}
         </h2>
         <div>
           {data.map(item => (

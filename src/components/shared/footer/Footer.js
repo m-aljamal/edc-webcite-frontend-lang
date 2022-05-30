@@ -76,7 +76,7 @@ Via our social media pages
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.761680764482!2d37.17757552470896!3d36.70426434511298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152fd17d4cd6f7b9%3A0x122a856f51adc165!2s79000%20Be%C5%9Fikkaya%2FKilis%20Merkez%2FKilis!5e0!3m2!1sen!2str!4v1598435154903!5m2!1sen!2str"
                 width="200"
-                height="100"
+                height="65"
                 frameBorder="0"
                 allowFullScreen=""
                 aria-hidden="false"
