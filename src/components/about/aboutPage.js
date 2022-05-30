@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import AboutVideo from "./AboutVideo"
 import HeroBackground from "../shared/HeroBackground"
@@ -19,13 +18,11 @@ const AboutPage = ({ lang }) => {
           }
         }
       }
-      slides: allSanityImagesSlide {
-        nodes {
-          aboutPageSlide {
-            asset {
-              fluid(maxWidth: 4000) {
-                ...GatsbySanityImageFluid
-              }
+      slides: sanityImagesSlide(title: { eq: "aboutSlides" }) {
+        aboutPageSlide {
+          asset {
+            fluid(maxWidth: 4000) {
+              ...GatsbySanityImageFluid
             }
           }
         }
@@ -74,7 +71,7 @@ const AboutPage = ({ lang }) => {
         <div className=" bg-mainblue opacity-30 absolute top-0 bottom-0 right-0 left-0"></div>
         <div className="flex absolute container top-0 bottom-0 items-center ">
           <div className="py-4 text-white font-bold container text-3xl ">
-            <h3 className="  ">{text1}</h3>
+            <h3>{text1}</h3>
             <h3 className={`${lang === "ar" ? "mr-8" : "ml-8"}   py-8`}>
               {text2}
             </h3>
@@ -87,7 +84,7 @@ const AboutPage = ({ lang }) => {
 
       <AboutUsSlider slides={slides} lang={lang} />
 
-      <Achivments />
+      <Achivments lang={lang} />
       <PartnersSection partnerTitle={partnerTitle} partnerBody={partnerBody} />
     </div>
   )

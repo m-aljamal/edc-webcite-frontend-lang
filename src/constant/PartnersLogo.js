@@ -1,6 +1,4 @@
 import React from "react"
-
-import styled from "styled-components"
 import Slider from "react-slick"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -54,28 +52,16 @@ const PartnersLogo = () => {
     ],
   }
   return (
-    <Wraper>
+    <div className="  ">
       <Slider {...settings}>
         {part.nodes[0].logo.map(icon => (
-          <div className="imgContainer" key={icon.asset.id}>
-            <Img fluid={icon.asset.fluid} />
+          <div key={icon.asset.id}>
+            <Img fluid={icon.asset.fluid} className="w-40   mx-auto" />
           </div>
         ))}
       </Slider>
-    </Wraper>
+    </div>
   )
 }
 
 export default PartnersLogo
-
-const Wraper = styled.div`
-  text-align: center;
-  .imgContainer {
-    max-width: 150px;
-  }
-  @media (max-width: 700px) {
-    .imgContainer {
-      max-width: 150px;
-    }
-  }
-`

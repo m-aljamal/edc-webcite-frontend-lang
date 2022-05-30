@@ -3,11 +3,13 @@ import Layout from "../components/shared/Layout"
 import { graphql } from "gatsby"
 import ProjectPage from "../components/project"
 import SEO from "../components/shared/seo"
-const Project = ({ location, data: { project } }) => {
+const Project = ({ location, data: { project }, pageContext }) => {
+  const { lang } = pageContext
+
   return (
-    <Layout location={location} lang="ar">
-      <SEO title={project.title} lang="ar" />
-      <ProjectPage data={project} />
+    <Layout location={location} lang={lang}>
+      {/* <SEO title={project.title[lang]} lang={lang} /> */}
+      <ProjectPage data={project} lang={lang} />
     </Layout>
   )
 }
@@ -24,6 +26,7 @@ export const query = graphql`
       _rawProjectDescription1
       _rawProjectDescription2
       _rawProjectIntro
+      _rawProjectGoals
       title {
         ar
         en
@@ -36,6 +39,10 @@ export const query = graphql`
       videoPoster
 
       projectGoals {
+        ar
+        en
+      }
+      shortDescription {
         ar
         en
       }

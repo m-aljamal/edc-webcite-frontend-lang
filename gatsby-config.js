@@ -3,23 +3,26 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Education Development Commission`,
-    arabicTitle: "هيئة تطوير التعليم",
-    enDescription: `Education Development Commission (EDC) is a non profit, non-governmental organization, working on developing school curricula in war-torn countries.`,
-    trDescription: "",
-    arDescription: `
-    هيئة تطوير التعليم هي منظمة غير حكومية وغير ربحية، تعمل على تطوير
-    مناهج دراسية خاصة للطلاب في مناطق الحروب والنزاعات، لتساعدهم على
-    إدراك ما فاتهم من سنوات دراسية 
-    `,
+    orgTitle: {
+      ar: "هيئة تطوير التعليم",
+      en: `Education Development Commission`,
+    },
+    description: {
+      ar: `هيئة تطوير التعليم هي منظّمة غير حكوميّة وغير ربحيّة، تعمل على تطوير
+      مناهج دراسيّة خاصّة للطلاب في مناطق الحروب والنزاعات، لتساعدهم على إدراك
+      ما فاتهم من سنوات دراسيّة بسب الحروب. وجاءت فكرة تأسيس الهيئة من إيمان
+      القائمين عليها بوجوب توفّر فرص التعليم النوعيّ لكافّةِ الأطفال الذين
+      يقطنون في أماكن النزاعات، بغضّ النظر عن وضعهم الاجتماعيّ، وطبيعة النزاع
+      السائد في مناطقهم.`,
+      en: `Education Development Commission is a non-governmental, non-profit organization that works to develop special curricula for students in war and conflict areas, to help them catch-up the years of school that they have missed due to wars. The idea of establishing the commission came from the belief of those in charge of it that quality education opportunities should be available to all children who live in conflict areas, regardless of their social status and the nature of the conflict prevailing in their areas.`,
+    },
     author: `mohammadjamol@gmail.com`,
-    twitterUserName: `@mohammadjamol`,
+    twitterUserName: `@edcmission`,
     siteUrl: `https://edcommission.com/`,
     image: `https://res.cloudinary.com/dqoung1wz/image/upload/v1613318354/websiteImage/edcLogo_vupus2.png`,
   },
   plugins: [
     `gatsby-plugin-advanced-sitemap`,
-    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-remote-images`,
@@ -37,6 +40,7 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -56,7 +60,7 @@ module.exports = {
         background_color: `#D7D7D7`,
         theme_color: `#476C86`,
         display: `minimal-ui`,
-        icon: `src/images/edc_footer.png`,
+        icon: `src/assist/images/edcLogo.png`,
       },
     },
     {
@@ -112,5 +116,6 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-twitter`,
   ],
 }

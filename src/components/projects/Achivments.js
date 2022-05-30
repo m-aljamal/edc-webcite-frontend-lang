@@ -1,11 +1,10 @@
 import React from "react"
 import Title from "../shared/Title"
-import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import ProjectNumber from "./ProjectNumber"
 
-const Achivments = () => {
+const Achivments = ({ lang }) => {
   const { ach, image, earth } = useStaticQuery(graphql`
     {
       ach: allSanityProjectsAchievements {
@@ -48,74 +47,37 @@ const Achivments = () => {
     ar: {
       title: `منجزاتنا:`,
     },
+    en: {
+      title: "our achievements",
+    },
   }
 
-  const { title } = words["ar"]
+  const { title } = words[lang]
   return (
-    <Wraper>
-      <Title text={title} />
-      <div className="achivmentHolder">
-        <Img fluid={image.image.asset.fluid} className="image" />
-        <div className="text">
-          <Img fluid={earth.image.asset.fluid} className="earth" />
+    <div className="py-20 relative">
+      <Title title={title} />
+      <div className="flex  relative  mt-8">
+        <div className="md:w-4/5 w-full  grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-5">
+          <div
+            className={`absolute  w-4/5 md:w-1/3 bottom-0 transform ${
+              lang === "en" ? "rotate-180" : ""
+            } `}
+          >
+            <Img fluid={earth.image.asset.fluid} />
+          </div>
           {ach.nodes.map((ach, i) => (
-            <ProjectNumber data={ach} key={i} />
+            <ProjectNumber data={ach} key={i} lang={lang} />
           ))}
         </div>
+        <div className="w-1/5  hidden sm:flex ">
+          <Img
+            fluid={image.image.asset.fluid}
+            className=" rounded-tr-md rounded-br-md w-full"
+          />
+        </div>
       </div>
-    </Wraper>
+    </div>
   )
 }
 
 export default Achivments
-const Wraper = styled.section`
-  padding: 50px 0;
-  .achivmentHolder {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  .text {
-    position: relative;
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-  }
-  .image {
-    width: 20%;
-  }
-  .earth {
-    position: absolute !important;
-    width: 35%;
-    right: 0;
-  }
-  @media (max-width: 700px) {
-    .text {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .earth {
-      width: 50%;
-      top: 20%;
-    }
-  }
-  @media (max-width: 450px) {
-    .text {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .image {
-      width: 40%;
-    }
-    .earth {
-      display: none;
-    }
-  }
-  @media (max-width: 350px) {
-    .image {
-      display: none;
-    }
-    .text {
-      width: 100%;
-    }
-  }
-`

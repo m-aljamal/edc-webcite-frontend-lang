@@ -10,12 +10,15 @@ function SEO({ lang, meta, title }) {
         site {
           siteMetadata {
             author
-            arDescription
-            enDescription
-            trDescription
             siteUrl
-            title
-            arabicTitle
+            orgTitle {
+              ar
+              en
+            }
+            description {
+              ar
+              en
+            }
             image
             twitterUserName
           }
@@ -24,12 +27,12 @@ function SEO({ lang, meta, title }) {
     `
   )
 
-  const metaDescription =
-    lang === "ar"
-      ? site.siteMetadata.arDescription
-      : lang === "en"
-      ? site.siteMetadata.enDescription
-      : site.siteMetadata.trDescription
+  const metaDescription = site.siteMetadata.description[lang]
+  const outTitle = site.siteMetadata.orgTitle[lang]
+  const keywords = {
+    ar: `مؤسسة هيئة تطوير التعليم, منظمة هيئة تطوير التعليم, هيئة تطوير التعليم ,عقل , تعليم ,منظمة ,جمعية ,شافعي, ايتام الاتارب, مدرسة ايتام الاتارب, مدرسة واجدو الطريق, واجدو الطريق,مركز دابق,حاضنة الثقافية,كفالة يتيم تعليمية ,منتدى دابق الثقافي , كلس , منظمات, عبد الملك علبي, المنقطعين عن التعليم  `,
+    en: `EDC organization, EDC, education development commission, Kilis, Aytam atarib, Wajdo A-Tariq School, Orphants, Dapiq, Dabiq Cultural Center, formal education, informal education, courses `,
+  }
   return (
     <Helmet
       htmlAttributes={{
@@ -43,7 +46,7 @@ function SEO({ lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: outTitle,
         },
         {
           property: `og:description`,
@@ -63,7 +66,7 @@ function SEO({ lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: outTitle,
         },
         {
           name: `twitter:description`,
@@ -79,7 +82,7 @@ function SEO({ lang, meta, title }) {
         },
         {
           name: `keywords`,
-          content: `EDC organization, EDC, education development commission, Kilis, Aytam atarib, ,مؤسسة هيئة تطوير التعليم, منظمة هيئة تطوير التعليم, هيئة تطوير التعليم,عقل, تعليم,منظمة,جمعية,شافعي, ايتام الاتارب, مدرسة ايتام الاتارب, مدرسة واجدو الطريق, واجدو الطريق,مركز دابق,حاضنة الثقافية,كفالة يتيم تعليمية ,منتدى دابق الثقافي , كلس , منظمات  `,
+          content: keywords[lang],
         },
         {
           name: `robots`,

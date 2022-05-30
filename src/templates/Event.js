@@ -3,12 +3,13 @@ import Layout from "../components/shared/Layout"
 import { graphql } from "gatsby"
 
 import SEO from "../components/shared/seo"
-import SingleEvent from "../components/events/SingleEvent"
-const Event = ({ location, data: { event } }) => {
+import EventPage from "../components/events/EventPage"
+const Event = ({ location, data: { event }, pageContext }) => {
+  const { lang } = pageContext
   return (
-    <Layout location={location} lang="ar">
-      <SEO title={event.title} lang="ar" />
-      <SingleEvent data={event} />
+    <Layout location={location} lang={lang}>
+      {/* <SEO title={event.title[lang]} lang={lang} /> */}
+      <EventPage data={event} lang={lang} />
     </Layout>
   )
 }
@@ -26,9 +27,13 @@ export const query = graphql`
         ar
         en
       }
+      shortDescription {
+        ar
+        en
+      }
       panner {
         asset {
-          fluid(maxWidth: 4000) {
+          fluid(maxWidth: 1000) {
             ...GatsbySanityImageFluid
           }
         }

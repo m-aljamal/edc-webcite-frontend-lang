@@ -3,7 +3,7 @@ import Slider from "react-slick"
 
 export default function ImageSlider({ children, noArrow, showDots, options }) {
   const settings = {
-    dots: showDots && true,
+    dots: false,
     dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,

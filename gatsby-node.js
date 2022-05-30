@@ -1,5 +1,5 @@
 const path = require("path")
-
+const languages = ["ar", "en"]
 async function projectsPages({ graphql, actions }) {
   const projectTemplate = path.resolve("./src/templates/Project.js")
   const { data } = await graphql(`
@@ -14,12 +14,15 @@ async function projectsPages({ graphql, actions }) {
     }
   `)
   data.projects.nodes.forEach(project => {
-    actions.createPage({
-      path: `projects/${project.slug.current}`,
-      component: projectTemplate,
-      context: {
-        slug: project.slug.current,
-      },
+    languages.forEach(lang => {
+      actions.createPage({
+        path: `${lang === "en" ? "/en" : ""}/projects/${project.slug.current}`,
+        component: projectTemplate,
+        context: {
+          slug: project.slug.current,
+          lang: `${lang === "en" ? "en" : "ar"}`,
+        },
+      })
     })
   })
 }
@@ -37,13 +40,17 @@ async function eventsPages({ graphql, actions }) {
       }
     }
   `)
+
   data.events.nodes.forEach(event => {
-    actions.createPage({
-      path: `events/${event.slug.current}`,
-      component: eventTemplate,
-      context: {
-        slug: event.slug.current,
-      },
+    languages.forEach(lang => {
+      actions.createPage({
+        path: `${lang === "en" ? "/en" : ""}/events/${event.slug.current}`,
+        component: eventTemplate,
+        context: {
+          slug: event.slug.current,
+          lang: `${lang === "en" ? "en" : "ar"}`,
+        },
+      })
     })
   })
 }

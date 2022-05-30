@@ -1,5 +1,4 @@
 import React from "react"
-import "normalize.css"
 import Header from "./navbar/header"
 import Footer from "../shared/footer/Footer"
 import AllRights from "../shared/footer/AllRights"

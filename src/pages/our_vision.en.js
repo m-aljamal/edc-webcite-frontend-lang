@@ -1,13 +1,12 @@
 import React from "react"
 import Layout from "../components/shared/Layout"
-import IndexContent from "../components/home"
 import SEO from "../components/shared/seo"
-
+import OurVision from "../components/about/OurVision"
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      <SEO title="Home" lang="en" />
-      <IndexContent lang="en" />
+      <SEO title="رؤيتنا" lang="en" />
+      <OurVision lang="en" />
     </Layout>
   )
 }

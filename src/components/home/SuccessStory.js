@@ -20,7 +20,7 @@ const Story = ({ story, image, title, lang }) => {
   return (
     <div className="relative ">
       <Background image={background.image.asset.fluid}>
-        <div className="container flex  items-center gap-2 ">
+        <div className="container flex flex-col md:flex-row  items-center gap-2 ">
           <div
             className={`text-right   py-4  ${
               lang === "ar" ? "text-right" : "text-left"
@@ -32,7 +32,7 @@ const Story = ({ story, image, title, lang }) => {
               {story}
             </p>
           </div>
-          <img src={image} alt="studentImage" />
+          <img src={image} alt="studentImage" className="" />
         </div>
       </Background>
     </div>

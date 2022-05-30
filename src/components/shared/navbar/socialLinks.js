@@ -21,18 +21,22 @@ const socialLinks = [
     url: "https://twitter.com/edcmission",
     icon: twitter,
   },
-  {
-    url: "https://t.me/edcommission",
-    icon: telgram,
-  },
+  // {
+  //   url: "https://t.me/edcommission",
+  //   icon: telgram,
+  // },
 ]
-export default () => {
+export default props => {
   return (
-    <ul className="flex gap-2 ">
+    <ul className={`flex gap-2  ${props.style}`}>
       {socialLinks.map((link, index) => (
         <li key={index}>
           <a href={link.url} target="_blank" rel="noreferrer">
-            <img src={link.icon} alt="social link" className=" w-8" />
+            <img
+              src={link.icon}
+              alt="social link"
+              className=" w-8 rounded-b-md "
+            />
           </a>
         </li>
       ))}

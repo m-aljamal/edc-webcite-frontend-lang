@@ -8,12 +8,18 @@ import AboutSection from "./AboutSection"
 const Index = ({ lang, location }) => {
   return (
     <div>
-      <Hero />
+      <div className=" container text-center text-2xl">
+        <h2 className="font-bold text-gray-700">هيئة تطوير التعليم</h2>
+        <h2 className="text-mainblue font-bold">
+          Education Development Commission
+        </h2>
+      </div>
+      <Hero lang={lang} />
       <AboutSection lang={lang} />
       <SuccessStory lang={lang} />
       <HomePageEvents lang={lang} />
       <PartnersSection
-        partnerTitle={lang === "ar" ? "شركاؤنا:" : "Our partners:"}
+        partnerTitle={lang === "ar" ? "شركاؤنا:" : "Our Partners:"}
       />
     </div>
   )
