@@ -29,14 +29,14 @@ const LanguageSelector = ({ location, lang }) => {
           onClick={languges[0].change}
           className=" cursor-pointer font-medium"
         >
-          <span className=" text-lg text-gray-800">{languges[0].name}</span>
+          <span className=" text-lg text-gray-800 font-bold">{languges[0].name}</span>
         </div>
       ) : (
         <div
           onClick={languges[1].change}
           className=" cursor-pointer font-medium"
         >
-          <span className=" text-lg text-gray-800">{languges[1].name}</span>
+          <span className=" text-lg text-gray-800 font-bold">{languges[1].name}</span>
         </div>
       )}
     </div>

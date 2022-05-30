@@ -44,7 +44,7 @@ export default ({ lang, location, size, visible, showSidebar }) => {
       <ul className="  lg:flex gap-8 pt-8  ">
         {mainLinks.map(link => (
           <li
-            className="text-lg font-medium text-gray-800 hover:bg-gray-200 lg:hover:bg-transparent  px-10 lg:px-0 py-2 lg:py-0"
+            className=" text-lg font-bold text-gray-800 hover:bg-gray-200 lg:hover:bg-transparent  px-10 lg:px-0 py-2 lg:py-0"
             key={link.id}
           >
             <Link
