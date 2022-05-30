@@ -29,7 +29,7 @@ const Footer = ({ lang }) => {
     ar: {
       welcome: "تفضل بزيارتنا: ",
       callus: "اتصل بنا:",
-      contact: "التواصل الاجتماعي: ",
+      contact: "التواصل الإجتماعي: ",
       address: "العنوان:",
       phone: "الهاتف: ",
       email: "الإيميل: ",

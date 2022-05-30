@@ -21,10 +21,10 @@ const socialLinks = [
     url: "https://twitter.com/edcmission",
     icon: twitter,
   },
-  {
-    url: "https://t.me/edcommission",
-    icon: telgram,
-  },
+  // {
+  //   url: "https://t.me/edcommission",
+  //   icon: telgram,
+  // },
 ]
 export default props => {
   return (
