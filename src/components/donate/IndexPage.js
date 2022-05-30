@@ -47,8 +47,10 @@ const IndexPage = ({ lang }) => {
     { title: "Name of account:", info: "EĞİTİM GELİŞTİRME DERNEĞİ" },
     {
       title: "Organization Address:",
-      info: `TURKEY - KILIS - OYLUM MAHALLESI GAZIANTEP YOLU (SÖĞÜTLÜDERE
-      CIVARI) KÜME EVLERI HAYAT VILLARI NO: 5V`,
+      info: `
+      DOĞAN GÜREŞ PAŞA MAH. MUSTAFA EREN CAD. 4/34 MERKEZ/KİLİS
+     
+      `,
     },
     { title: "zip code:", info: `79000` },
     { title: "Swift code:", info: `TCZBTR2AXXX` },
