@@ -1,8 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Background from "../Background"
-import SocialLinks from "../navbar/socialLinks"
 import Img from "gatsby-image"
+import FooterSocialLinks from "./FooterSocialLinks"
 
 const getImage = graphql`
   {
@@ -105,7 +105,7 @@ Via our social media pages
             <div>
               <p className=" w-72">{socialtext}</p>
               <div className="mt-2">
-                <SocialLinks />
+                <FooterSocialLinks />
               </div>
             </div>
           </Content>
