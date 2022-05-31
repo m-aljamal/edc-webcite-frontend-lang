@@ -46,12 +46,14 @@ const EventsList = ({ lang }) => {
           {events.edges.map(
             (e, i) =>
               i < 3 && (
-                <Event
-                  data={e}
-                  homePage
-                  key={e.node.slug.current}
-                  lang={lang}
-                />
+                <div className="relative transition duration-150 ease-out hover:scale-110">
+                  <Event
+                    data={e}
+                    homePage
+                    key={e.node.slug.current}
+                    lang={lang}
+                  />
+                </div>
               )
           )}
         </div>

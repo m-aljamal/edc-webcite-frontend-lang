@@ -1,35 +1,55 @@
 import React from "react"
 import Title from "../shared/Title"
-import edc2021 from "../../assist/images/edc2021.jpg"
+import Img from "gatsby-image"
+import { useStaticQuery } from "gatsby"
+import { FiDownload } from "react-icons/fi"
 const Reports = ({ lang }) => {
+  const { reports } = useStaticQuery(graphql`
+    {
+      reports: allSanityReports {
+        nodes {
+          id
+          pdf_url
+          cover {
+            asset {
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <div className="container py-20">
       <Title title={lang === "ar" ? "التقارير" : "Reports"} />
-      <div className="grid grid-cols-3 gap-8 mt-8">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://drive.google.com/file/d/1YTSB1qJha0FDiP1dmqta-gcuM60y_Le9/view?usp=sharing"
-        >
-          <img src={edc2021} className="w-full shadow-md rounded-md " />
-          <p className="text-mainblue font-medium text-center pt-2">
-            اضغط لقراة التقرير
-          </p>
-        </a>
-        {/* <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://drive.google.com/file/d/1YTSB1qJha0FDiP1dmqta-gcuM60y_Le9/view?usp=sharing"
-        >
-          <img src={edc2021} className="w-full shadow-md rounded-md" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://drive.google.com/file/d/1YTSB1qJha0FDiP1dmqta-gcuM60y_Le9/view?usp=sharing"
-        >
-          <img src={edc2021} className="w-full shadow-md rounded-md" />
-        </a> */}
+      <div className="grid grid-cols-3 gap-8 mt-12  ">
+        {reports.nodes.map(({ cover, id, pdf_url }) => (
+          <a
+            style={{ gridColumn: "2 / span 1" }}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={pdf_url}
+            key={id}
+            className="relative transition duration-150 ease-out hover:scale-110 "
+          >
+            <Img
+              fluid={cover.asset.fluid}
+              alt="التقرير"
+              className="rounded-md shadow-2xl "
+            />
+
+            <div className=" absolute bg-gray-400 z-20 top-0 bottom-0 left-0 right-0 rounded-md opacity-0 hover:opacity-75 transition  ">
+              <div className=" flex justify-center items-center h-full ">
+                <div className=" bg-mainblue rounded-full w-28 h-28 flex justify-center items-center ">
+                  <FiDownload className="text-white  text-6xl " />
+                </div>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   )
