@@ -61,15 +61,19 @@ Via our social media pages
         <div className="text-center">
           <Img fixed={img.edcImg.childImageSharp.fixed} />
         </div>
-        <div className="md:flex   justify-between md:text-right text-center">
-          <div>
+        <div
+          className={`md:flex justify-between ${
+            lang === "ar" ? "md:text-right" : "md:text-left"
+          }  text-center`}
+        >
+          <div className="md:w-1/3">
             <h2 className="my-4 text-white font-bold">{address}</h2>
             <p style={{ direction: "ltr" }} className="text-gray-300">
               DOĞAN GÜREŞ PAŞA MAH. <br />
               MUSTAFA EREN CAD. 4/34 MERKEZ/KİLİS
             </p>
           </div>
-          <div>
+          <div className="md:w-1/3">
             <h2 className="my-4 text-white font-bold">{callus}</h2>
             <div className="text-gray-300">
               <div>
