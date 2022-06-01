@@ -25,15 +25,14 @@ const Reports = ({ lang }) => {
   return (
     <div className="container py-20">
       <Title title={lang === "ar" ? "التقارير" : "Reports"} />
-      <div className="grid grid-cols-3 gap-8 mt-12  ">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 mt-12  ">
         {reports.nodes.map(({ cover, id, pdf_url }) => (
           <a
-            style={{ gridColumn: "2 / span 1" }}
             target="_blank"
             rel="noopener noreferrer"
             href={pdf_url}
             key={id}
-            className="relative transition duration-150 ease-out hover:scale-110 "
+            className="relative transition duration-150 ease-out hover:scale-110 lg:col-span-full  lg:w-1/3 lg:mx-auto "
           >
             <Img
               fluid={cover.asset.fluid}

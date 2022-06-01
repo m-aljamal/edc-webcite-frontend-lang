@@ -41,8 +41,8 @@ const EventsList = ({ lang }) => {
   return (
     <div className="container md-font mt-10">
       <Title title={lang === "ar" ? `آخر الفعاليات` : "Latest Events"} />
-      <div className="flex gap-8">
-        <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 mt-8 w-3/4">
+      <div className="lg:flex gap-8">
+        <div className="grid  grid-cols-1 lg:grid-cols-2 gap-8 mt-8 lg:w-3/4">
           {events.edges.map(
             (e, i) =>
               i < 3 && (
@@ -58,7 +58,7 @@ const EventsList = ({ lang }) => {
           )}
         </div>
 
-        <div className="w-1/4">
+        <div className="lg:w-1/4 h-[500px] lg:h-auto mt-20 lg:mt-0 shadow-lg ">
           <a
             class="twitter-timeline"
             data-width="100%"

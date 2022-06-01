@@ -8,6 +8,9 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      gridColumn: {
+        "span-1": "grid-column: 2 / span 1",
+      },
       fontFamily: {
         sans: ["Tajawal"],
       },
