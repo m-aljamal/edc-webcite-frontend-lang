@@ -9,7 +9,7 @@ import Reports from "./Reports"
 const Index = ({ lang, location }) => {
   return (
     <div>
-      <div className=" container text-center text-2xl">
+      <div className=" container text-center text-2xl mt-8">
         <h2 className="font-bold text-gray-700">هيئة تطوير التعليم</h2>
         <h2 className="text-mainblue font-bold">
           Education Development Commission

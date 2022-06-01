@@ -61,54 +61,32 @@ Via our social media pages
         <div className="text-center">
           <Img fixed={img.edcImg.childImageSharp.fixed} />
         </div>
-        <div className="  grid md:grid-cols-3 grid-cols-1 place-items-center mt-4  gap-10">
-          {/* start location */}
-          <Content title={welcome}>
-            <div>
-              <div className="">
-                <p>{address}</p>
-                <p style={{ direction: "ltr" }}>
-                  DOĞAN GÜREŞ PAŞA MAH.
-                  <br />
-                  MUSTAFA EREN CAD. 4/34 MERKEZ/KİLİS
-                </p>
-              </div>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.4229596280225!2d37.13010501510709!3d36.71240198033706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152fd14b3888bf3b%3A0x3c4e81e098a827ed!2z2YfZitim2Kkg2KrYt9mI2YrYsSDYp9mE2KrYudmE2YrZhQ!5e0!3m2!1sen!2str!4v1654066532358!5m2!1sen!2str"
-                width="200"
-                height="65"
-                frameBorder="0"
-                allowFullScreen=""
-                aria-hidden="false"
-                tabIndex="0"
-              ></iframe>
-            </div>
-          </Content>
-          <div className="hidden md:block">
-            <Content title={callus}>
-              {/* start address */}
-              <div>
-                <div className="my-4">
-                  <p>{phone} </p>
-                  <p style={{ direction: "ltr" }}>+90 531 507 45 47</p>
-                  <p style={{ direction: "ltr" }}>+90 534 661 12 24</p>
-                </div>
-                <div>
-                  <p>{email}</p>
-                  <p>info@edcommission.com</p>
-                </div>
-              </div>
-            </Content>
+        <div className="md:flex   justify-between md:text-right text-center">
+          <div>
+            <h2 className="my-4 text-white font-bold">{address}</h2>
+            <p style={{ direction: "ltr" }} className="text-gray-300">
+              DOĞAN GÜREŞ PAŞA MAH. <br />
+              MUSTAFA EREN CAD. 4/34 MERKEZ/KİLİS
+            </p>
           </div>
-          {/* start social */}
-          <Content title={contact}>
-            <div>
-              <p className=" w-72">{socialtext}</p>
-              <div className="mt-2">
-                <FooterSocialLinks />
+          <div>
+            <h2 className="my-4 text-white font-bold">{callus}</h2>
+            <div className="text-gray-300">
+              <div>
+                <p>{phone} </p>
+                <p style={{ direction: "ltr" }}>+90 531 507 45 47</p>
+                <p style={{ direction: "ltr" }}>+90 534 661 12 24</p>
+              </div>
+              <div className="mt-4">
+                <p>{email}</p>
+                <p>info@edcommission.com</p>
               </div>
             </div>
-          </Content>
+          </div>
+          <div>
+            <h2 className="my-4 text-white font-bold">{contact}</h2>
+            <FooterSocialLinks />
+          </div>
         </div>
       </div>
     </Background>
@@ -116,12 +94,3 @@ Via our social media pages
 }
 
 export default Footer
-
-const Content = ({ title, children }) => {
-  return (
-    <div>
-      <h4 className="text-white text-lg ">{title}</h4>
-      <div className="text-gray-300 mt-4 leading-8">{children}</div>
-    </div>
-  )
-}
