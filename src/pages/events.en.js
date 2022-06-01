@@ -5,7 +5,7 @@ import SEO from "../components/shared/seo"
 const EventsPage = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      <SEO title="الفعاليات" lang="en" />
+      <SEO title="Events" lang="en" />
       <IndexContent lang="en" />
     </Layout>
   )

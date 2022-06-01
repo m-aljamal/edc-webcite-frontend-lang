@@ -5,7 +5,7 @@ import OurVision from "../components/about/OurVision"
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      <SEO title="رؤيتنا" lang="en" />
+      <SEO title="Our Vision" lang="en" />
       <OurVision lang="en" />
     </Layout>
   )

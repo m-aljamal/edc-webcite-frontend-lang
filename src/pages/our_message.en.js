@@ -6,7 +6,7 @@ import OurMessage from "../components/about/OurMessage"
 const our_message = ({ location }) => {
   return (
     <Layout location={location} lang="en">
-      <SEO title="رسالتنا" lang="en" />
+      <SEO title="Our Message" lang="en" />
       <OurMessage lang="en" />
     </Layout>
   )
